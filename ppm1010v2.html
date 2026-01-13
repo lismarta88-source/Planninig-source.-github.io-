@@ -1,0 +1,4664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="adg-md2html v1.28.0">
+    <base target="_self">
+    <style>
+/* Light theme - Big font - Normal contrast - Variant 3: Classic Blue */
+/* Classic blue corporate style */
+
+:root {
+    --primary-color: #007cbf;
+    --secondary-color: #555555;
+    --accent-color: #89d329;
+    --background-color: #fafafa;
+    --surface-color: #ffffff;
+    --text-color: #141414;
+    --text-muted: #555555;
+    --border-color: #cccccc;
+    --code-bg: #f0f0f0;
+    --link-color: #007cbf;
+    --heading-color: #141414;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 2rem;
+    max-width: 100%;
+}
+
+.container, .content, main, article {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 98%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-weight: 600;
+    line-height: 1.35;
+    margin-top: 1.8em;
+    margin-bottom: 0.7em;
+}
+
+h1 { font-size: 2.1rem; border-bottom: 3px solid var(--primary-color); padding-bottom: 0.4em; }
+h2 { font-size: 1.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3em; }
+h3 { font-size: 1.45rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; color: var(--text-muted); }
+
+p {
+    margin: 0 0 1.2em 0;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* Lists */
+ul, ol {
+    margin: 0 0 1.2em 0;
+    padding-left: 1.8em;
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
+/* Code */
+code {
+    font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 0.88em;
+    background-color: var(--code-bg);
+    padding: 0.2em 0.45em;
+    border-radius: 4px;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+pre {
+    background-color: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1.2em;
+    overflow-x: auto;
+    margin: 1.2em 0;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.9rem;
+    border: none;
+}
+
+/* Blockquote */
+blockquote {
+    margin: 1.2em 0;
+    padding: 0.8em 1.2em;
+    border-left: 4px solid var(--primary-color);
+    background-color: var(--surface-color);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 0.85em 1em;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: var(--surface-color);
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    margin: 2em 0;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1em 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* TOC */
+.toc {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 0 0 8px 8px;
+    padding: 1.5em;
+    margin: 1.5em 0;
+}
+
+.toc-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8em;
+    color: var(--heading-color);
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 1.2em;
+    margin: 0;
+}
+
+.toc li {
+    margin: 0.35em 0;
+}
+
+.toc a {
+    color: var(--text-muted);
+}
+
+.toc a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    html { font-size: 17px; }
+    body { padding: 1rem; }
+    h1 { font-size: 1.85rem; }
+    h2 { font-size: 1.55rem; }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 16px; }
+    body { padding: 0.75rem; }
+}
+
+/* Print */
+@media print {
+    body { background: white; color: black; padding: 0; }
+    a { color: black; text-decoration: underline; }
+    pre, code { background-color: #f5f5f5; }
+    th { background-color: #e0e0e0; color: black; }
+}
+
+/* stylesheet: light_big_font_normal_contrast_3.css */
+
+</style>
+</head>
+<body>
+    <div class="document-container">
+        
+        <main class="content">
+            <h1>Introduction</h1>
+<table>
+<thead>
+<tr>
+<th>Level 1 Process Name</th>
+<th>Level 2 Process Name</th>
+<th>Level 3 Process Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Investment management</td>
+<td>Investment management., planning, budgeting</td>
+<td>Set-Up project and manage data</td>
+</tr>
+</tbody>
+</table>
+<p>SAP Portfolio and Project Management is a tool that will help to monitor the projects and portfolio of projects and make decisions about realization and development of these Projects. SAP PPM enables to better control and innovate projects, processes, products, and services across their life cycles. It allows us to make decisions on clear and valuable information like portfolio value, balance, financial figures, and strategic alignment which provides decision support to understand current portfolios and projects in portfolios.</p>
+<h1>Definitions and Abbreviations</h1>
+<table>
+<thead>
+<tr>
+<th>Abbreviations</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CI</td>
+<td>Capital Invest</td>
+</tr>
+<tr>
+<td>EX</td>
+<td>Expense</td>
+</tr>
+<tr>
+<td>ELT</td>
+<td>Executive Leadership Team</td>
+</tr>
+<tr>
+<td>PPE</td>
+<td>Property, plant and equipment</td>
+</tr>
+<tr>
+<td>PPM</td>
+<td>Portfolio and Project Management</td>
+</tr>
+<tr>
+<td>SIB</td>
+<td>Small Investment Budget</td>
+</tr>
+</tbody>
+</table>
+<h2><strong>Business objects to describe business process:</strong></h2>
+<h3>Bucket</h3>
+<p>A <strong>bucket</strong> represents a structural element of a portfolio and reflects how portfolio items are organized within the overall portfolio hierarchy. Each portfolio item is assigned to exactly one bucket, and each bucket contains a defined set of portfolio items.</p>
+<p>Buckets can belong either to the <strong>standard portfolio structure</strong> or to a <strong>classification hierarchy</strong>. Together, they form the backbone of the portfolio and reflect the company’s strategic organization.</p>
+<p>Buckets enable <strong>financial and capacity planning</strong> at an aggregated level. Planning data at bucket level can be compared with individual portfolio items, and detailed information is available via the <strong>reporting cockpit</strong>.</p>
+<h5><strong>Standard Portfolio Bucket Hierarchy</strong></h5>
+<p>The standard portfolio structure consists of the following hierarchy levels:</p>
+<ul>
+<li><strong>Division</strong></li>
+<li><strong>Function</strong></li>
+<li><strong>Sub‑Function</strong></li>
+<li><strong>Site + Legal Entity</strong></li>
+<li><strong>Project</strong></li>
+</ul>
+<h3>Hierarchy Relationships</h3>
+<table>
+<thead>
+<tr>
+<th>Hierarchy Level</th>
+<th>Relationship to Level Below</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Division</td>
+<td>One Division has one or more Functions (1:n)</td>
+<td>CS, PH, CH</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>One Function has one or more Sub‑Functions (1:n)</td>
+<td>R\&amp;D, PS, IT</td>
+</tr>
+<tr>
+<td>Sub‑Function</td>
+<td>One or more Sub‑Functions relate to one or more Sites (n:m)</td>
+<td>PH R\&amp;D, PS PH, PS API</td>
+</tr>
+<tr>
+<td>Site + Legal Entity</td>
+<td>One Site has one or more Legal Entities (1:n)</td>
+<td>Berlin LE1230, Leverkusen LE0960, Whippany</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>Project belongs to one bucket (1:1)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Portfolio Item</strong></p>
+<p>Generic object representing for example proposals, projects, concepts (anything that should be analyzed within a portfolio). Portfolio items can have dependencies to other items. You can create versions of a portfolio item. Each portfolio item consists of a set of attributes and can have services (e.g., questionnaires, scoring models) assigned to it. Portfolio item can be assigned at the lowest level buckets. It can be assigned to one or more buckets within the classification hierarchy.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Item Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Z001</td>
+<td>Investment Project</td>
+</tr>
+<tr>
+<td>Z002</td>
+<td>Investment Project w/o SAP PS</td>
+</tr>
+<tr>
+<td>Z003</td>
+<td>Lumpsum Budget</td>
+</tr>
+<tr>
+<td>Z004</td>
+<td>Lumpsum Project</td>
+</tr>
+<tr>
+<td>Z005</td>
+<td>B&amp;C Project</td>
+</tr>
+<tr>
+<td>Z006</td>
+<td>Admin Project</td>
+</tr>
+<tr>
+<td>Z007</td>
+<td>Expense Project</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Collection</strong></p>
+<p>A set of related portfolio items with a common strategic goal. Collections represent, for example, initiatives or programs within portfolio planning. A collection has its own reporting cockpit to enable portfolio managers to monitor the performance of the collection. A collection defines a subset of items and offers a way of structuring items that is different to the hierarchy of buckets. It can contain items from different buckets.</p>
+<p><strong>Classification Hierarchy</strong></p>
+<p>An arrangement of buckets within a portfolio structure that is an alternative to the standard portfolio hierarchy. Used to create a different bucket structure consisting of the items and initiatives from the standard portfolio hierarchy. Often used to represent the organizational setup of the company. In a classification hierarchy, existing business objects from the standard portfolio hierarchy are assigned and reviews, collections, and buckets can be performed.</p>
+<p>As per the requirement below type of Classification hierarchy is structured for better categorization</p>
+<p><strong>PH/CH:</strong></p>
+<p>·        IT Investment</p>
+<p>·        Strategic Investment</p>
+<p>·        Grow &amp; Optimize</p>
+<p>·        Secure &amp; Sustain</p>
+<p>·        Site Investment Budget</p>
+<p>·        LtO (Baseline)</p>
+<p>·        LtO One Off    </p>
+<p><img alt="Figure 2" src="Pitures\Figure2ClassificationHierarchy.png" /></p>
+<p><strong>2.</strong><strong>4 </strong><strong>Create and maintain bucket</strong></p>
+<p>To achieve a company's objectives during a specific time period, a coordinated group of portfolio items is managed. The strategic structure of a company is reflected in its portfolio, which may consist of one overall portfolio or separate portfolios managed independently. Each portfolio is a distinct entity and not interrelated with others. The portfolio's hierarchical structure is evident through the categorization of portfolio items into specific buckets. Financial and capacity planning can be conducted on these buckets and compared with the planning data of individual items. Information on portfolio items within a bucket can be obtained from a reporting cockpit.</p>
+<p>The overall structure of the portfolio is reflected in the hierarchy of buckets. Each portfolio item falls into a certain bucket within the portfolio. One bucket consists of a set of portfolio items. Each bucket is part of the overall portfolio structure.</p>
+<p>The standard buckets/portfolio will have the following levels: </p>
+<ul>
+<li>
+<p>Divisions</p>
+</li>
+<li>
+<p>Function</p>
+</li>
+<li>
+<p>Sub Function</p>
+</li>
+<li>
+<p>Sites + Legal entity</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Hierarchy level</th>
+<th>Relation to level below</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Division</td>
+<td>1 division has 1 or more (n) Functions (1: n)</td>
+<td>CS, PH, CH</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>1 Function has 1 or more (n) Sub-Functions (1: n)</td>
+<td>R&amp;D, PS, IT</td>
+</tr>
+<tr>
+<td>Sub-Function</td>
+<td>1 or more (n) Sub-Functions have 1 or more (m) Sites (n:m)</td>
+<td>PH R&amp;D, PS PH, PS API</td>
+</tr>
+<tr>
+<td>Site + Legal entity</td>
+<td>1 Site has 1 or more (n) Sites (1: n)</td>
+<td>Berlin LE 1230 , Leverkusen LE0960, Whippany</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>Belongs to Site (1:1) Can be assigned to one or more than one SBE (1:n) in order to ensure an accurate divisional or cross divisional BUD/ ACT allocation, see example graphic below Project category to be assigned 1:1 to each project</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 1-Examples for hierarchy levels</em></p>
+<p><img alt="Figure 3" src="images/image0003.png" /></p>
+<p>Figure 1. Standard Hierarchy Level</p>
+<p><img alt="Figure 4" src="images/image0004.png" /><br />
+    Figure 2. Standard Hierarchy Level</p>
+<p><strong>2.</strong><strong>5 </strong><strong>Portfolio</strong><strong> Item Types</strong></p>
+<p>The following cases should reflect in Portfolio Items (and be represented as separate Portfolio Item types): </p>
+<ul>
+<li>
+<p>Lumpsum Project- Small Project fitting into the execution of the site with simplified approval process with (one step) AR Approval (Without Capital Planning G0, B&amp;C, Pre-fund and Supplemental) with Capital planning FEL0 and Basic design FEL3 gates.</p>
+</li>
+<li>
+<p>Lumpsum Budget - Lumpsum Budget Project are the placeholders which are used for to accommodate lumpsum budget for overall projects with simple approval process (one step) AR Approval (Without Capital Planning G0, B&amp;C, Pre-fund and Supplemental) with Capital planning FEL0 gates.</p>
+</li>
+<li>
+<p>Investment project -Proposals will be plans or ideas for potential investments at Bayer involving CAPEX and significant OPEX.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Project Size</th>
+<th>Responsible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Projects &lt; 1m EUR</td>
+<td>Division/Venture Manager</td>
+</tr>
+<tr>
+<td>Projects &gt;= 1m EUR &lt; 5 m EUR</td>
+<td>Division/Venture Manager</td>
+</tr>
+<tr>
+<td>Projects &gt; 5m EUR</td>
+<td>ELT (Executive Leadership Team)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Table 2. Project Size and Responsible*</p>
+</li>
+<li>
+<p>Admin Project -Projects which are used for Central delta adjustments and plugs that allows for manual financial planning and actual posting without creation of operative projects for Portfolios and only usable by admins.</p>
+</li>
+<li>
+<p>Expense Project- (Requirement from End-of-Life process) Projects which are used only to cover the OPEX cost including one step approval process (without A/R document)  and with Capital planning FEL0 &amp; Basic design FEL3 gates.</p>
+</li>
+<li>
+<p>Investment Project w/o SAP PS- Projects which can be used for Non-SAP Sites with no PS project creation and actual costs can be added manually.</p>
+</li>
+<li>
+<p>B &amp; C project- Project ideas used to understand the “what” i.e., User requirements and developing the “how” i.e., technical solutions of a potential investments at Bayer involving OPEX only as special part of investment Project.</p>
+</li>
+</ul>
+<p><strong>2.</strong><strong>5</strong><strong>.1 </strong><strong>Create and maintain portfolio item</strong></p>
+<p>A portfolio item serves as a universal entity that can embody proposals, projects, or concepts, among other things. This process is used to compile pertinent details for the item, such as customer-specific characteristics or services. Collections can be created by grouping multiple items. Portfolio items can have dependencies on other items, and multiple versions of a portfolio item can be generated.</p>
+<p>An investment is defined as an increase in the assets in the Bayer Group’s balance sheet. The costs to be capitalized are capital expenditures (CapEx). Investment/restructuring measures can also include expenses and operational expenditures (OpEx) at the same time. These measures can relate to the following circumstances:</p>
+<ul>
+<li>
+<p>Property, plant, and equipment (PPE), e.g.</p>
+</li>
+<li>
+<p>Land, office buildings and other real estate transactions within the meaning of Corporate Directive No. 2084</p>
+</li>
+<li>
+<p>Operating equipment and machinery</p>
+</li>
+<li>
+<p>Devices and installations</p>
+</li>
+<li>
+<p>Information technology (hardware)</p>
+</li>
+<li>
+<p>Restructuring measures</p>
+</li>
+<li>
+<p>Leases</p>
+</li>
+<li>
+<p>Intangible Assets</p>
+</li>
+<li>
+<p>Only Intangible Assets which can be capitalized. E.g., Information Technology (Software)</p>
+</li>
+</ul>
+<h1>Process Flow and Description</h1>
+<h2>A2R-IM-10-10 Set-Up project and manage data</h2>
+<p>** Set-Up project &amp; manage data **</p>
+<p>Link: </p>
+<p>Screenshot: </p>
+<p><img alt="Figure 5" src="images/image0005.png" /></p>
+<p><em>Figure 4. </em><em>Signavio</em><em> Process flow: A2R-IM-10-10 Set-Up project &amp; manage data</em></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Type</th>
+<th>Input (Condition)</th>
+<th>Output</th>
+<th>Process Step Description</th>
+<th>Persona</th>
+<th>Supporting Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start</td>
+<td>-</td>
+<td>1</td>
+<td>New Investment Proposed</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Task</td>
+<td>1</td>
+<td>2</td>
+<td>Create Investment</td>
+<td>A2R Investment Project Planner</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Gate</td>
+<td>2</td>
+<td>3</td>
+<td>Status of Investment Details</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Task</td>
+<td>3</td>
+<td>4</td>
+<td>Maintain details and classify the investment</td>
+<td>A2R Investment Project Planner</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Task</td>
+<td>4</td>
+<td>5</td>
+<td>Plan Investment</td>
+<td>A2R Investment Project Planner</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Task</td>
+<td>5</td>
+<td>6</td>
+<td>Submit Investment for Central Review</td>
+<td>A2R Investment Project Planner</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Task</td>
+<td>6</td>
+<td>7</td>
+<td>Perform Review of Investment</td>
+<td>A2R Investment Manager</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Task</td>
+<td>7</td>
+<td>8</td>
+<td>Maintain details and classify the investment (Central data)</td>
+<td>A2R Investment Manager</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Task</td>
+<td>8</td>
+<td>9</td>
+<td>Decide on investment proposal</td>
+<td>A2R Investment Manager</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Gate</td>
+<td>9</td>
+<td>10</td>
+<td>Is Proposal Accepted</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Task</td>
+<td>10</td>
+<td>11(Proposal Not Accepted)</td>
+<td>Resubmit Investment for Local Rework-Status Proposed</td>
+<td>A2R Investment Manager</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Task</td>
+<td>10</td>
+<td>12(Proposal Accepted)</td>
+<td>Approve Investment Proposal- Status Registered</td>
+<td>A2R Investment Manager</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>13</td>
+<td>End</td>
+<td>12</td>
+<td>13</td>
+<td>Investment Registered</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 3. </em><em>Signavio</em>* process steps *</p>
+<p>The Process starts with the new Investment Proposal proposed. In task 2, Investment Project Planner creates the investment based on requirement for the Project. At gate 3, the decision is made based on the accuracy and relevant details to be maintained for new proposal or the proposal which was resubmitted for the rework. </p>
+<p>In task 4, Investment Project Planner maintain the details of the investment such as type of investment, project category, reason for investment and relevant data related to investment. Investment project planner plans the investment based on the estimation of requirement of the project in Task 5. For Task 6, Once the high-level forecast planning is performed, the Investment project planner submits the Investment for Central Review. </p>
+<p>In Task 7, Investment Manager performs Review of Investment and check whether the scope of proposal aligns with Business needs and justification. For Task 8, Investment Manager maintains the central level details to Investment example-Project Prioritization, classification hierarchy. In task 9, Investment Manager perform the decision on the investment Proposal based on reviews of business risks, rationale for the investment and Scope justification of the proposal. </p>
+<p>At Gate 10, the decision is made whether the proposal is accepted or not. If the proposal is not accepted, then as per Task 11, the Investment is Resubmitted for the local rework done by the requestor and set to Status proposed. For Task 12, If the proposal is accepted, Then Investment Manager approves the Investment Proposal and sets the status to Registered. Task 13 marks the end of Set up project and manage data flow with the Investment Registered.</p>
+<h2>Process Variants</h2>
+<p>N/A</p>
+<h1>Data Model</h1>
+<p>N/A</p>
+<h1>System Functionality</h1>
+<table>
+<thead>
+<tr>
+<th>Sr. Nr.</th>
+<th>URS ID</th>
+<th>Type 1)</th>
+<th>Functionality</th>
+<th>CS/DS ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1000000329</td>
+<td>S</td>
+<td>Programs and Initiatives</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1000000329</td>
+<td>C</td>
+<td>Implement Status 'pre-fund approved'</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1000000329</td>
+<td>S</td>
+<td>IM16: Data insertion granularity</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1000000329</td>
+<td>S</td>
+<td>IM 19: Key Identifier</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1000000329</td>
+<td>S</td>
+<td>IM20: Change log</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1000000329</td>
+<td>S</td>
+<td>IM52: SBE key</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1000000329</td>
+<td>S</td>
+<td>IM53: SBE key allocation</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1000000329</td>
+<td>S</td>
+<td>IM54: Program Info, Category</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1000000329</td>
+<td>C</td>
+<td>IM71: User fields</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1000000329</td>
+<td>C</td>
+<td>IM62: Placeholder projects</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1000000329</td>
+<td>C</td>
+<td>IM13: Required fields</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1000000329</td>
+<td>D</td>
+<td>Integration between PPM on EMD Hub and the template/divisional strands</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT14: Define Portfolio Type</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>14</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT15: Define Portfolio Item Types</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT16: Mapping of Decision points to Portfolio Item Types</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT13: Define Items statuses for the portfolio Item types</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>17</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT17: Set Portfolio Item priorities</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>18</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT18: Structure Category and Subcategories for Portfolio Items.</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>19</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT19: Define Project size for portfolio Item</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>20</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT20: Define Investment Reason for Portfolio Item.</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>21</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT21: Mapping Project template to Portfolio Item template</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>22</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT23: Field Objects Hidden from PPM Item screen</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>23</td>
+<td>1000000329</td>
+<td>C</td>
+<td>CT24: Set up Custom Long text Fields for Admins and Site</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>24</td>
+<td>1000000329</td>
+<td>D</td>
+<td>Portfolio Item ID needs to match Project Coding Mask</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>24.1</td>
+<td>1000000329</td>
+<td>D</td>
+<td>Custom Messages for Validation &amp; Substitution</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>25</td>
+<td>1000000329</td>
+<td>C</td>
+<td>IM18: Currency conversion</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>26</td>
+<td>1000000329</td>
+<td>C</td>
+<td>IM25: Load FX-rates</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>27</td>
+<td>1000000329</td>
+<td>C</td>
+<td>IM30: Manual actuals insertion</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>28</td>
+<td>1000000329</td>
+<td>S</td>
+<td>IM59: Mass upload</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>29</td>
+<td>1000000329</td>
+<td>C</td>
+<td>IM63: Placeholder projects &amp; non-SAP companies</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>30</td>
+<td>1000000329</td>
+<td>D</td>
+<td>Additional Fields for Project Specifications</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>30.1</td>
+<td>1000000329</td>
+<td>D</td>
+<td>PE65: Field description</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>31</td>
+<td>1000000329</td>
+<td>S</td>
+<td>For Capex part describe high-level scope of purchase for R2D</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>32</td>
+<td>1000036328</td>
+<td>S</td>
+<td>IM28: Data validity checks</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>33</td>
+<td>1000000329</td>
+<td>S</td>
+<td>IM50: Adjustments Org</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>34</td>
+<td>1000000329</td>
+<td>S</td>
+<td>Single Value Hierarchy</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>35</td>
+<td>1000000329</td>
+<td>C</td>
+<td>Update of Decision points to Portfolio items</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>36</td>
+<td>1000000329</td>
+<td>C</td>
+<td>IM 76 Meaningful Screen Layouts</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>37</td>
+<td>1000012863</td>
+<td>C</td>
+<td>IM 67 Enterprise Risk management (ERM)</td>
+<td>CS_A2R-IM-10-10_ Set-Up Project &amp; Manage Data</td>
+</tr>
+<tr>
+<td>38</td>
+<td>1000012863</td>
+<td>S</td>
+<td>IM 58 Subsystem linkage</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>39</td>
+<td>1000027496</td>
+<td>D</td>
+<td>Automatically Site/Country/Region setup</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>40</td>
+<td>1000027496</td>
+<td>D</td>
+<td>Delete Reporting Status and replace with ERM number</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>41</td>
+<td>1000027496</td>
+<td>D</td>
+<td>Error correction in project fields</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>42</td>
+<td>1000027496</td>
+<td>S</td>
+<td>Define 4th level standard for Bucket structure - Site name + company code</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>43</td>
+<td>1000027496</td>
+<td>D</td>
+<td>SBE Integration (Product hierarchy)</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>44</td>
+<td>1000036328</td>
+<td>D</td>
+<td>Profit centre Usage</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>45</td>
+<td>1000036328</td>
+<td>D</td>
+<td>Project Description &amp; status needs to be added in the report (A2R)</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>46</td>
+<td>1000036328</td>
+<td>C</td>
+<td>OPEX Projects adjustments</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>47</td>
+<td>1000036328</td>
+<td>A</td>
+<td>Activate change-log for all users</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>48</td>
+<td>1000036328</td>
+<td>C</td>
+<td>OPEX: Adjustment of detailed level 3 planning</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>49</td>
+<td>1000036328</td>
+<td>M</td>
+<td>CS Product Team Structure</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>50</td>
+<td>1000036328</td>
+<td>C</td>
+<td>PPM structure &amp; field updates</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>51</td>
+<td>1000036328</td>
+<td>A</td>
+<td>IM51: Adjustments shifts</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>52</td>
+<td>1000036328</td>
+<td></td>
+<td>Interface between EMDH and HR system (GHP) to import information on resources for approval workflow and resource assignment</td>
+<td></td>
+</tr>
+<tr>
+<td>53</td>
+<td>1000036328</td>
+<td>C</td>
+<td>Implementation of functional currency concept</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>54</td>
+<td>1000044162</td>
+<td>S</td>
+<td>For Capex part describe high-level scope of purchase for R2D</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>55</td>
+<td>1000044162</td>
+<td>A</td>
+<td>Access for Externals to SAP/CPM</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>56</td>
+<td>1000056076</td>
+<td>D</td>
+<td>Rename ARF to Asset Retirement Obligation &amp; small adjustments</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>57</td>
+<td>1000044162</td>
+<td>D</td>
+<td>Special Authorization for Admin &amp; Site fields</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>58</td>
+<td>1000056076</td>
+<td>A</td>
+<td>Launchpad for Portfolio &amp; Project Management</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>59</td>
+<td>1000044162</td>
+<td>D</td>
+<td>PPM Field adjustments</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>60</td>
+<td>1000044162</td>
+<td>A</td>
+<td>Authorization design update</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>61</td>
+<td>1000044162</td>
+<td>C</td>
+<td>Project Size to be removed by Lumpsum Projects</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>62</td>
+<td>1000044162</td>
+<td>D</td>
+<td>System should be able to accommodate migration</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>63</td>
+<td>1000044162</td>
+<td>C</td>
+<td>Front Page of portfolio items</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>64</td>
+<td>1000044162</td>
+<td>C</td>
+<td>Rename Expense to Opex project in Asset Type 1 field</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>65</td>
+<td>1000056076</td>
+<td>C</td>
+<td>Portfolio Item overview header adjustment</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>66</td>
+<td>1000056076</td>
+<td>SOP</td>
+<td>For Capex part describe high-level scope of purchase for R2D</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>67</td>
+<td>1000056076</td>
+<td>D</td>
+<td>Allowed cost center adapted only to valid ones</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>68</td>
+<td>1000056076</td>
+<td>D</td>
+<td>Admin and Site fields usable by SAC Reporting and portfolio priorization</td>
+<td>DS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>69</td>
+<td>1000056076</td>
+<td>C</td>
+<td>Adjustment of Technology Type in PPM</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>70</td>
+<td>1000056076</td>
+<td>C</td>
+<td>Implementation of sites in the Site field for Basel and Iberia</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>71</td>
+<td>1000056076</td>
+<td>C</td>
+<td>Global BCS adjustments August 2025 - Change of Priority and new field</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>72</td>
+<td>1000056076</td>
+<td>C</td>
+<td>Implementation of site/Country/Region for US Crop Science</td>
+<td>CS_A2R-IM-10-10</td>
+</tr>
+<tr>
+<td>73</td>
+<td>1000066542</td>
+<td>D</td>
+<td>Implement Profit Center Radiology</td>
+<td>DS_A2R-IM_Additional Fields for Appropriation Request (AR)Form</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>S</th>
+<th>Requirement is covered by solution standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>C</td>
+<td>Requirement can be covered by system parameterization / customizing</td>
+</tr>
+<tr>
+<td></td>
+<td>D</td>
+<td>Requirement can be covered by customer-specific development (RICEFW)</td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>Requirement can be covered by authorization management</td>
+</tr>
+<tr>
+<td></td>
+<td>SOP</td>
+<td>Requirements cannot be covered by the system. Therefore, a n SOP is needed</td>
+</tr>
+<tr>
+<td></td>
+<td>M</td>
+<td>Requirement can be covered by master data maintenance</td>
+</tr>
+<tr>
+<td></td>
+<td>N</td>
+<td>Requirement will not be realized</td>
+</tr>
+</tbody>
+</table>
+<h2>5.1  Programs and Initiatives</h2>
+<p>System should provide with the functionality to categorize the projects as per the Business units for operations as well as for reporting purpose.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>Merge multiple PS projects into one program and initiatives for reporting</p>
+<p><strong>Acceptance criteria</strong>:</p>
+<ul>
+<li>
+<p>Be able to group/link multiple projects into a program</p>
+</li>
+<li>
+<p>Be able to group/link multiple projects into an initiative</p>
+</li>
+</ul>
+<p><strong>D</strong><strong>esign</strong><strong> Decision</strong><strong>:</strong></p>
+<p>Initiative functionality will not be used for grouping of Multiple project .Usage of collection functionality to group multiple projects.</p>
+<h2>5.2  Implement Status 'pre-fund approved' status</h2>
+<p>System should provide the functionality for Investment Manager to align with the project progress based on the approval of the funds at different stages of the process. This will have the clarity and traceability on the stage of AR approved and will ensure to proceed for the next decision on approval process till complete stage process Also the status of pre-fund approval should be able to implement in recurring phase as during the project execution phase there could be the requirement of pre-fund more than one time.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>Implement Status 'pre-fund approved'. Provide visualization of what are Pre-Funds and Supplementals in the reports to facilitate filtering and analysis Currently Project is shown as approved, evaluation requires a separate field to determine that only the pre-fund has been started so far.</p>
+<p><strong>Acceptance criteria</strong>:</p>
+<ul>
+<li>Include status pre-fund for general item approval process</li>
+</ul>
+<h2>5.3  IM16: Data insertion granularity</h2>
+<p>System should provide with the functionality to enter the financial values when the planning period is open. It should also support the consideration of Forecast planning for at least 6 years for the effective planning processes for all planning events taken place for projects.</p>
+<p>The following User Story applies to the functionality</p>
+<p>As a user I want to insert my plan data on a yearly basis across the whole planning horizon. However, for the current year only it needs to be possible to enter the data per quarter also. This is required to provide me the option to enter data on a reasonable level of detail.</p>
+<p><strong>Acceptance criteria</strong>: </p>
+<ul>
+<li>Insert plan data for at least six years (current + five years). Current year and next year to be insert by quarter.</li>
+</ul>
+<h2>5.4  IM 19: Key Identifier</h2>
+<p>System should provide with the functionality to categorized and differentiate between the Tangible and Intangible Projects to ensure the transparency on the type of investment.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Admin I want all single tangible and Intangible projects to be identifiable by one primary key identifier defined by the tool across the entire system landscape. This is required for transparency</p>
+<p><strong>Acceptance criteria</strong>:</p>
+<ul>
+<li>Identification of Tangible and Intangible Projects.</li>
+</ul>
+<h2>5.5  IM20: Change log</h2>
+<p>The system should provide functionality to provide the details of changes in PPM with the time stamp. This will help for traceability of data changed during time frame. The change log should reflect the details such as field value that has been changed from old value to new value. Also, it should capture the time stamp and record of who made the changes.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Admin I want the tool to provide a change log for all data stored in CapEx tool database. Meaning that the user who changed data can be traced by documented CWID and timestamp. This is to be done for all transactional data and master data.  This is required for transparency</p>
+<p><strong>Acceptance criteria</strong>:</p>
+<ul>
+<li>Traceability of Changed Data by CWID and Timestamp.</li>
+</ul>
+<h2>5.6  IM52: SBE key</h2>
+<p>The system should provide with the functionality where SBE's are created as classification hierarchy wherein the user can select multiple SBE's and allocate the percentages for further reporting purposes.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager I want to have the option to reflect SBE key allocations on a project level (ideally: in line with connected cost centres allocations) to allow for allocation to different SBEs.</p>
+<p><strong>Acceptance criteria</strong>:</p>
+<ul>
+<li>SBE Key Allocation should be possible on project level with different percentages</li>
+</ul>
+<p><strong>Design decision:</strong>**  **</p>
+<p>Strategic Business Entity will not be used by R2D, hence SBE is removed from Classification Hierarchy Structure<strong>.</strong>**  **</p>
+<h2>5.7    IM53: SBE key allocation</h2>
+<p>As an Investment Manager I want those users are forced to implement a complete allocation of the project (in percent, adding up to 100%) and new projects have a 100% default allocation based on the Division (e.g., Division Pharma 100% to 0840 PH Others) to ensure correct allocation and reporting.</p>
+<p><strong>Acceptance criteria</strong>: </p>
+<ul>
+<li>SBE key default allocation for all projects according to special hierarchy and enforcement of 100% entries.</li>
+</ul>
+<p><strong>Design decision:</strong></p>
+<p>Strategic Business Entity will not be used by R2D, hence SBE is removed from Classification Hierarchy Structure </p>
+<h2>5.8  IM54: Program Info, Category</h2>
+<p>System should ensure that only authorized Investment Management personnel should be able to change the Key portfolio objects to avoid any inconsistencies<strong>.</strong></p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager I require that (only) Investment Management can flexibly and with low effort define and adjust (rename, add, delete) key portfolio structures (Program Info + Project Category + division specific Project Category 2) prominently visible to all users to support portfolio and approval processes</p>
+<p><strong>Acceptance criteria</strong>: </p>
+<ul>
+<li>Assignment and maintenance of some admin fields with low effort only by admins</li>
+</ul>
+<h2>5.9  IM71: User fields</h2>
+<p>Investment Manager requires the functionality to have more additional customized User fields to enter the data that captures the more detailed data of the portfolio Items. This functionality will ensure users to have enhanced feature of EPPM with additional fields for more information on Proposal/Project and facilitate efficient reporting. </p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an investment manager I want to have additional user fields so that I can maintain all the needed information during project creation and execution. </p>
+<p><strong>Acceptance criteria</strong>: </p>
+<ul>
+<li>Possibility to have additional user fields in the process.</li>
+</ul>
+<h2>5.10 IM62: Placeholder projects</h2>
+<p>In order to support portfolio, plug and delta management as well as Placeholders for lumpsum Project new Portfolio item type for Place holder project should be defined in system. It should also have the functionality to allow to do financial planning and Actuals posting to these Place holder projects manually.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager I want to be able to setup placeholder projects in a placeholder site (available for all buckets) with the option to manually enter Actual, Forecast, OPC, StraCo entry values in Euro to allow for portfolio, plug and delta management.</p>
+<p><strong>Acceptance criteria</strong>:</p>
+<ul>
+<li>Placeholder projects with limited visibility and no necessary integration with CPM/PS.</li>
+</ul>
+<p><strong>Design Decision</strong></p>
+<p>New Portfolio Item Type created for Plugs and Placeholder Projects</p>
+<h2>5.11     IM13: Required fields.</h2>
+<p>System should provide with the set of fields which can be either Mandatory fields which are always necessary to be filled or optional fields that can be filled by the user if necessary for the project setup, execution and controlling purpose. This fields should capture all the relevant details related to the project specification and able to influence granularity of project.</p>
+<p>The following User story applies to the functionality.</p>
+<p>As an Administrator I want the data in the tool to contain the information listed in the field list handed over to the project team (see file 20221207_CapEx requirements_ Update for CORE V1.0.docx, chapter 2.2.1). It needs to be possible to set fields to mandatory or voluntary usage. Usage of the fields can also vary according to the respective ERP-System (SAP or non-SAP).</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>All needed fields (see list assigned) are covered by the system solution and assigned as mandatory or optional.</li>
+</ul>
+<p><em>Note-As per the Information listed for the User requirement of this user story-,Chap. 5.1 is covering only standard fields and configured fields in EPPM. For Customized fields- Gap stories are defined which will cover in later Wave)</em></p>
+<p><strong>Design Decision:</strong></p>
+<p>The following set of Standard fields will be captured to create, execute, and control the project in EPPM system.</p>
+<table>
+<thead>
+<tr>
+<th>Data Field Name</th>
+<th>Possible value</th>
+<th>Description/Comments</th>
+<th>Mandatory</th>
+<th>Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Number</td>
+<td>Number</td>
+<td>Project Number generated automatically by SAP system. Note- Currently system generated number is used and then edited as per coding mask for PS project. GAP is defined for portfolio Item and Ps project to have same number.</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Project Name</td>
+<td>Text field</td>
+<td>Provide the Defined description/Name of Project</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Project Scope Description</td>
+<td>Text Field</td>
+<td>Define the scope of project relevant for project planning as well as to give the overview of project for project reporting</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Project Admin/Users (CWID)</td>
+<td>CWID, Name</td>
+<td>Shows the authorization Users with the feature of rights of None/Write/read /Admin</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Bayer Project Manager</td>
+<td>CWID, Name</td>
+<td>Person responsible option can be selected by adding Users in Authorization</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Program Info</td>
+<td>Text Field</td>
+<td>Collection functionality will help to provide the information on Project level. Different project within one program can be bundled in reporting across divisions via this field. This field should be accessible only to admin. Hence authorization control is needed for several divisions</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Division</td>
+<td>Pre-define from system for selection</td>
+<td>Bucket functionality is used to define the division selection for create of portfolio Item</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Function</td>
+<td>Pre-define from system for selection</td>
+<td>Bucket/Sub bucket functionality is used to define the division selection for create of portfolio Item</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Sub-Function/ Responsibility</td>
+<td>Pre-define from system for selection</td>
+<td>Bucket/Sub bucket functionality is used to define the Sub function/Responsibility selection for create of portfolio Item</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Region</td>
+<td>Possible values to be derived from site, values according to BAG register</td>
+<td>Classification Hierarchy functionality used to derive the Region Selection for Portfolio Item</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Legal Entity</td>
+<td>Possible values to be derived from site</td>
+<td>Classification Hierarchy functionality used to derive the Legal Entity Selection for Portfolio Item</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Country</td>
+<td>Possible values to be derived from site, values according to BAG register</td>
+<td>Classification Hierarchy functionality used to derive the Country Selection for Portfolio Item</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Investment reason/Group</td>
+<td>Configured Field. Selection from drop down. (Requirement Covered in CT20 User story)</td>
+<td>Terms to distinguish Basic Demand/ Additional Demand and to define the reasoning of the project requirement in investment proposal.</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Project Prioritization</td>
+<td>Configured Field. Selection from drop down. (Requirement Covered in CT17 User story)</td>
+<td>Define the Priority in portfolio items provides the overview of the preference and order of portfolio Item.</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Asset type- Item Category</td>
+<td>Configured Field- Selection from drop down. (Requirement Covered in CT18 User story)</td>
+<td>Define the type of Investment proposal initiated (Tangible/Intangible)</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Asset Type2- Item Subcategory</td>
+<td>Configured Field- Selection from drop down. (Requirement Covered in CT18 User story)</td>
+<td>Define the sub classification of Investment proposal initiated</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Project Size</td>
+<td>Configured Field- Selection from drop down. (Requirement Covered in CT19 User story)</td>
+<td>Define categorization the projects based on the budget, to have the visibility and field that captures the project budget range of the investment proposal.</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Project Status</td>
+<td>Configured Field- Selection from drop down. (Requirement Covered in CT13 User story)</td>
+<td>Used to provide Information generated based on status set by System according to progress/ position in project lifecycle, or status will be set manually by user</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Associated Projects (info concerning related projects)</td>
+<td>Selection from Drop down menu</td>
+<td>Bucket/Sub bucket functionality can be used to have the overview about the projects linked to function/sub-function</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>6 Fields for Custom use by Site/ Function/…</td>
+<td>Text fields</td>
+<td>Custom Long text fields functionality can be used in PPM for site/Function/Sub-functions to enter the details. (Description for fields pending- can just Site fields description used?)</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>12 Admin fields with restricted access and visibility</td>
+<td>Text Fields</td>
+<td>Custom Long text fields functionality can be used in PPM for Admins to enter the details. (Description for fields pending- can just Admin fields description used?)</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Approved Supplemental AR values in Euro</td>
+<td>Status</td>
+<td>Portfolio Item status functionality can provide the status of approved supplemental</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>NPV, CFROI, payback time</td>
+<td>Financial KPIs maintained manually and not calculated.</td>
+<td>Financial Information tab in portfolio item covered the Financial KPIs</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Project Phase</td>
+<td>FEL 0 FEL 1 FEL 2 FEL 3 Execution Completion Closed</td>
+<td>Decision Point functionality can provide the overview Project phase according to stage gate process</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Local currency</td>
+<td>Currency</td>
+<td>Currency selection option available in financial information tab for Portfolio Item</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Program Definition- Portfolio</td>
+<td>Portfolio field</td>
+<td>Portfolio Field can be used to demonstrate the Program description</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Admin area text</td>
+<td>Text Field</td>
+<td>Document and Notes tab covered the functionality for admins to enter the texts/ details in the Notes section</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>Created by (CWID)</td>
+<td>CWID and Name</td>
+<td>Administrative Data under additional information tab generated by system will be provide the log of CWID and time stamp.</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Change by (CWID)</td>
+<td>CWID and Name</td>
+<td>Administrative Data under additional information tab generated by system will be provide the log of CWID and time stamp.</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Planned Start/Finish Date</td>
+<td>Date selection</td>
+<td>During the creation of Portfolio Item, Requestor should maintain the start and end date of the Project.</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>Project Definition</td>
+<td>Project Code- system generated</td>
+<td>Project definition framework along with its WBS Structures (least level 3) will be generated automatically in PS system from the selected Item template for portfolio Item after the system is set to Pre-fund approved /Project approved.</td>
+<td>X</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>5.12 Integration  between PPM on EMDH and template/divisional strands</h2>
+<p>In order to have efficient and centralized ease of management for Portfolios and Projects, all the EPPM components should have the automatic integration for complete project life cycle. This will ensure that the correct data is processed and transferred to correct solution system. To accomplish this PPM will be setup on the Enterprise master data hub (EMDH) as a centralized hub for all the master data be to use for the portfolios and Project execution whereas PS will be used on the divisional strands an interface between the master data hub and the division stands.</p>
+<p>There should also be a job run daily </p>
+<p>The following User Story applies to the functionality: </p>
+<p>As an investment manager I want to work with an automatic integrated between portfolio management and project execution. As PPM will be setup on the master data hub and PS, CPM will be used on the divisional strands an interface between the master data hub and the division stands is required to achieve this</p>
+<p><strong>Acceptance criteria</strong>:</p>
+<ul>
+<li>
+<p>PS Project creation from PPM possible on pharma strand</p>
+</li>
+<li>
+<p>Approved AR Budget transferred from portfolio item to PS project executed on pharma strand</p>
+</li>
+<li>
+<p>Actual costs accrued on pharma strand visible in PPM</p>
+</li>
+<li>
+<p>PS Project creation from PPM possible on crop science strand</p>
+</li>
+<li>
+<p>Approved AR Budget transferred from portfolio item to PS project executed on crop science strand</p>
+</li>
+<li>
+<p>Actual costs accrued on crop science strand visible in PPM</p>
+</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<ul>
+<li>
+<p>SAP informed that standard interface from PPM to CPM does not work in case of hub deployment, therefore CPM integration moved into separate GAP user story #49859</p>
+</li>
+<li>
+<p>Daily Job run PPMACTUALCOPY for the Copy of Actual cost from PS to PPM defined.</p>
+</li>
+</ul>
+<h2>5.13 CT14: Define Portfolio Type</h2>
+<p>Portfolio Type provides the classification of the area in which the portfolio definition to be created.</p>
+<p>It is a required attribute that facilitates the functionality to determine the display of portfolio data in the front-end application. </p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Investment Manager, I need to classify the area in which a portfolio is used. It will also help for Identification, controlling and Reporting of portfolio items.</p>
+<div class="highlight"><pre><span></span><code>**Acceptance criteria**:
+</code></pre></div>
+
+<ul>
+<li>Portfolio type defined for the portfolio definitions.</li>
+</ul>
+<p><strong>Design </strong><strong>D</strong><strong>v</strong><strong>ecision</strong><strong>:</strong></p>
+<p>Portfolio Type: Y001</p>
+<p>Portfolio Type Text: Bayer Portfolio </p>
+<p>Transfer type for SAP ERP Data- Financial periodic planning, Yearly and overall </p>
+<h2>5.14 CT15: Define Portfolio Item Types</h2>
+<p>System should provide with the functionality of grouping the proposals or projects which follow the same processes. It should be able to cover and align the projects that are associated with the same base system or share the same phases. </p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Investment Manager I need to have the standard Portfolio templates which can be used for the creation of the projects with the same processes and phases.</p>
+<p><strong>Acceptance criteria</strong>:</p>
+<ul>
+<li>Portfolio Items defined for the projects which follows same phases.</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<p><strong>Version 2 as per latest design decision</strong></p>
+<ul>
+<li>
+<p>Renamed Z002 type to Investment Project w/o SAP PS</p>
+</li>
+<li>
+<p>Removed Low value asset Project.</p>
+</li>
+<li>
+<p>Added Lumpsum Budget Project.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Item Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Z001</td>
+<td>Investment Project</td>
+</tr>
+<tr>
+<td>Z002</td>
+<td>Investment Project w/o SAP PS</td>
+</tr>
+<tr>
+<td>Z003</td>
+<td>Lumpsum Budget</td>
+</tr>
+<tr>
+<td>Z004</td>
+<td>Lumpsum Project</td>
+</tr>
+<tr>
+<td>Z005</td>
+<td>B&amp;C Project</td>
+</tr>
+<tr>
+<td>Z006</td>
+<td>Admin Project</td>
+</tr>
+<tr>
+<td>Z007</td>
+<td>Expense Project</td>
+</tr>
+</tbody>
+</table>
+<h2>5.15 CT16: Mapping of Decision points to Portfolio Item Types</h2>
+<p>Decision Point provides the functionality to capture a phase through which a portfolio item passes. Based on the decision point state we can have the traceability of the phase for portfolio item </p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Investment Controller, I need to have the traceability about the state of ongoing phase of project.</p>
+<p><strong>Acceptance Criteria</strong>:</p>
+<ul>
+<li>Decision points are defined to capture the phase of Portfolio Item.</li>
+</ul>
+<p><strong>Design Decision</strong></p>
+<p>Setup of decisions points for registering and approval of A/R with Possibilities to send for registration/approval and approved in the different decision points of an A/R.</p>
+<p>~~<strong>Version 1</strong>~~~~<strong>   </strong>~~</p>
+<table>
+<thead>
+<tr>
+<th>Portfolio Item Type</th>
+<th>Decision Point</th>
+<th>Decision point Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Completed Not Applicable</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>In Approval Pre-Fund</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Concept Approval incl. Pre-fund(G2)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Mechanical Completion(G4)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>Ready for Production (G5)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>Ready for Market (G6)</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Not Applicable</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>In Approval Pre-Fund</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Concept Approval incl. Pre-fund(G2)</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Project Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Project Execution</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Project Execution</td>
+<td>Mechanical Completion(G4)</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Project Execution</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>Ready for Production (G5)</td>
+</tr>
+<tr>
+<td>Investment Project Legacy (Z002)</td>
+<td>Validation</td>
+<td>Ready for Market (G6)</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z003)</td>
+<td>Lumpsum</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z003)</td>
+<td>Lumpsum</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z003)</td>
+<td>Lumpsum</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z004)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z004)</td>
+<td>Business Planning (FEL 1)</td>
+<td>In Approval B &amp; C</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z004)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Business Rationale Approval(G1)</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z004)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td>Low Value asset Project (Z005)</td>
+<td>Low Value Asset</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Low Value asset Project (Z005)</td>
+<td>Low Value Asset</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Low Value asset Project (Z005)</td>
+<td>Low Value Asset</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>Admin Project (“Plug &amp; Placeholder”) (Z006)</td>
+<td>Admin</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Admin Project (“Plug &amp; Placeholder”) (Z006)</td>
+<td>Admin</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Admin Project (“Plug &amp; Placeholder”) (Z006)</td>
+<td>Admin</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Expense Planning</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Expense Planning</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Expense Planning</td>
+<td>Approved</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Expense Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Expense Execution</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Expense Execution</td>
+<td>Approved Main AR</td>
+</tr>
+</tbody>
+</table>
+<p>~~<strong>Version 2 as per design decision (Wave 5)</strong>~~</p>
+<table>
+<thead>
+<tr>
+<th>Portfolio Item Type</th>
+<th>Decision Point</th>
+<th>Decision point Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Completed Not Applicable</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>In Approval Pre-Fund</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Pre-fund Approved</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Concept Approval (G2)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Mechanical Completion (G4)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>Ready for Production (G5)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>In Approval Validation</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>Validation Approved</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>Ready for Market (G6)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Completed Not Applicable</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>In Approval Pre-Fund</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Pre-fund Approved</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Concept Approved (G2)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Project Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Project Execution</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Project Execution</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Project Execution</td>
+<td>Mechanical Completion(G4)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>Ready for Production (G5)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Validation</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Validation</td>
+<td>In Approval Validation</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Validation</td>
+<td>Validation Approved</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Validation</td>
+<td>Ready for Market (G6)</td>
+</tr>
+<tr>
+<td>Lumpsum Budget (Z003)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Budget (Z003)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Lumpsum Budget (Z003)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Lumpsum Project Completed</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Business Planning (FEL 1)</td>
+<td>In Approval B &amp; C</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Approved B&amp;C</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Business Rationale Approval(G1)</td>
+</tr>
+<tr>
+<td>Admin Project (Z006)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Admin Project (Z006)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Admin Project (Z006)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Admin Project (Z006)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Planning Project Completed</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Expense Project Completed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Version 2 as per design decision (Wave 7)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Project Type</th>
+<th>Decision Point</th>
+<th>Decision Point status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Investment Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initation (G0)</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Business Planning (FEL 1)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Business Planning (FEL 1)</td>
+<td>Finished</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Concept Definition (FEL 2)</td>
+<td>In Approval Pre-Fund</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Pre-fund Approved</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Concept Approval (G2)</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Project Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Project Execution</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Project Execution</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Project Execution</td>
+<td>Mechanical Completion (G4)</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Commissioning /Qualification</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Commissioning /Qualification</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Commissioning /Qualification</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Commissioning /Qualification</td>
+<td>Ready for Production (G5)</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Validation</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Validation</td>
+<td>In Approval Validation</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Validation</td>
+<td>Validation Approved</td>
+</tr>
+<tr>
+<td>Investment Project</td>
+<td>Validation</td>
+<td>Ready for Market (G6)</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initation (G0)</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Business Planning (FEL 1)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Business Planning (FEL 1)</td>
+<td>Finished</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Concept Definition (FEL 2)</td>
+<td>In Approval Pre-Fund</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Pre-fund Approved</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Concept Approval (G2)</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Project Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Project Execution</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Project Execution</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Project Execution</td>
+<td>Mechanical Completion (G4)</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Commissioning /Qualification</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Commissioning /Qualification</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Commissioning /Qualification</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Commissioning /Qualification</td>
+<td>Ready for Production (G5)</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Validation</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Validation</td>
+<td>In Approval Validation</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Validation</td>
+<td>Validation Approved</td>
+</tr>
+<tr>
+<td>Investment project w/o PS project</td>
+<td>Validation</td>
+<td>Ready for Market (G6)</td>
+</tr>
+<tr>
+<td>Lumpsum Budget</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Budget</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Lumpsum Budget</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Lumpsum Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Lumpsum Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Lumpsum Project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Project</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Lumpsum Project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Lumpsum Project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Lumpsum Project Completed</td>
+</tr>
+<tr>
+<td>B&amp;C Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>B&amp;C Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>B&amp;C Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>B&amp;C Project</td>
+<td>Business Planning (FEL 1)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>B&amp;C Project</td>
+<td>Business Planning (FEL 1)</td>
+<td>In Approval B &amp; C</td>
+</tr>
+<tr>
+<td>B&amp;C Project</td>
+<td>Business Planning (FEL 1)</td>
+<td>Approved B&amp;C</td>
+</tr>
+<tr>
+<td>B&amp;C Project</td>
+<td>Business Planning (FEL 1)</td>
+<td>Business Rationale Approval(G1)</td>
+</tr>
+<tr>
+<td>Admin Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Admin Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Admin Project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Admin Project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Planning Project Completed</td>
+</tr>
+<tr>
+<td>Expense project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Expense project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Expense project</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Expense project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Expense project</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Expense project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Expense project</td>
+<td>Basic Design (FEL 3)</td>
+<td>Expense Project Completed</td>
+</tr>
+</tbody>
+</table>
+<h2>5.16 CT13: Define Items statuses for the portfolio Item types</h2>
+<p>The Item status of the Portfolio Item should provide the functionality to document the status of Portfolio Items based on the state of the process. The change in the status can trigger the workflow and automatically inform the person responsible of these status changes. </p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Requestor, I need to exhibit the change in state of the proposal after being submitted to Investment Manager to review it.</p>
+<p><strong>Acceptance Criteria</strong><strong>:</strong></p>
+<ul>
+<li>Item statuses are maintained to define the status of Portfolio Item</li>
+</ul>
+<p><strong>Design decision:</strong></p>
+<p><strong>Version 1</strong>**: **</p>
+<table>
+<thead>
+<tr>
+<th>Item status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proposed</td>
+</tr>
+<tr>
+<td>Submitted</td>
+</tr>
+<tr>
+<td>Registered</td>
+</tr>
+<tr>
+<td>In Approval Pre-fund</td>
+</tr>
+<tr>
+<td>Pre-fund Not Required</td>
+</tr>
+<tr>
+<td>Pre-fund Approved</td>
+</tr>
+<tr>
+<td>In Approval Project</td>
+</tr>
+<tr>
+<td>Project Approved</td>
+</tr>
+<tr>
+<td>In Approval Supplemental</td>
+</tr>
+<tr>
+<td>Supplemental Approved</td>
+</tr>
+<tr>
+<td>On-hold</td>
+</tr>
+<tr>
+<td>Technically Closed</td>
+</tr>
+<tr>
+<td>Financially Closed</td>
+</tr>
+<tr>
+<td>Cancelled</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Version 2</strong><strong>: </strong>As per Wave 4 decision, below are the statuses of Portfolio Item (On- Hold status removed)</p>
+<table>
+<thead>
+<tr>
+<th>Item status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proposed</td>
+</tr>
+<tr>
+<td>Registered</td>
+</tr>
+<tr>
+<td>In Execution</td>
+</tr>
+<tr>
+<td>Completed (TC)</td>
+</tr>
+<tr>
+<td>Closed (FC)</td>
+</tr>
+<tr>
+<td>Canceled</td>
+</tr>
+</tbody>
+</table>
+<h2>5.17 CT17: Set Portfolio Item priorities</h2>
+<p>Priority in portfolio items provides the overview of the preference and order of portfolio Item. This will help the investment manager to efficiently manage and navigate the portfolio items are make informed decisions during processing activities. </p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Investment Manager I need to be able to set the priorities to the Portfolio items which will help to make decisions of projects based on priority order.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Priority selection set for the Portfolio Item.</li>
+</ul>
+<p><strong>Design Decision</strong><strong>:</strong></p>
+<p>~~Version 1~~~~:~~~~    ~~</p>
+<table>
+<thead>
+<tr>
+<th>Portfolio Item Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+</tr>
+<tr>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<p>Version 2 : Update as per wave 7 design decision</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Priority Group Text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bus. Case cal. (CFROI&gt;35%orPB&lt;=2y) Prio1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bus. Case cal. (CFROI&gt;25%orPB&lt;=4y) Prio2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bus. Case cal. (CFROI&lt;=25%orPB&gt;4y) Prio3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>High priority strategic initiative Prio1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Medium priority strategic initiative Prio2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Low priority strategic initiative Prio3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Safety / HSE Prio1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Compliance / GMP Prio1</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Repl. bus. crit. high sales Prio1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Repl. bus. crit. Prio2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Repl. non bus. crit. Prio3</td>
+</tr>
+</tbody>
+</table>
+<h2>5.18 CT18: Structure Category and Subcategories for Portfolio Item</h2>
+<p>System should support with the functionality to define the type of the proposal initiated by the requestor. This will provide the visibility and identification on the type of requestor’s proposal and will allows investment manager to efficiently plan decision and determine whether the proposal is effective or not<strong>.</strong></p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Requestor, I need to categorize the proposal based on the type of requirement for the project<strong>.</strong></p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Category and Sub-category structure is defined for Portfolio Items</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<p><strong>Lease Category is only possible for Admin projects</strong><strong> &amp; Investment projects w/o SAP</strong><strong> and not for other forms of projects (Wave 8 update)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Sub- category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tangible Assets</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>Tangible Assets</td>
+<td>Finance Lease (changed  Wave 8)</td>
+</tr>
+<tr>
+<td>In-Tangible Assets</td>
+<td>Software</td>
+</tr>
+<tr>
+<td>In-Tangible Assets</td>
+<td>In-License/Collab</td>
+</tr>
+<tr>
+<td>In-Tangible Assets</td>
+<td>Ext. Registr. Costs</td>
+</tr>
+<tr>
+<td>In-Tangible Assets</td>
+<td>Patents</td>
+</tr>
+<tr>
+<td>In-Tangible Assets</td>
+<td>Trademarks with definite</td>
+</tr>
+<tr>
+<td>In-Tangible Assets</td>
+<td>Marketing Rights</td>
+</tr>
+<tr>
+<td>In-Tangible Assets</td>
+<td>Production Rights</td>
+</tr>
+</tbody>
+</table>
+<h2>5.19 CT19: Define Project size for portfolio Item.</h2>
+<p>To categorize the projects based on the budget, system should provide with the functionality to have the visibility and field that captures the project budget range of the investment proposal. This will ensure to have the decision on defining the processes involve like Approval hierarchy, committees’ involvement, and measures to be taken for project operations.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Requestor I need to define the Project size based on the forecast budget of the project during AR proposal creation.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Project Size selection is defined for the Portfolio Item</li>
+</ul>
+<p><strong>Design Decision</strong></p>
+<table>
+<thead>
+<tr>
+<th>Project Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lumpsum (only for Lumpsum projects)</td>
+</tr>
+<tr>
+<td>Lumpsum - 1Mio Euro</td>
+</tr>
+<tr>
+<td>Projects 1-5 Mio Euro</td>
+</tr>
+<tr>
+<td>Projects 5 -10 Mio Euro</td>
+</tr>
+<tr>
+<td>Projects 10-20 Mio Euro</td>
+</tr>
+<tr>
+<td>Projects 20-100 Mio Euro</td>
+</tr>
+<tr>
+<td>Projects &gt; 100 Mio Euro</td>
+</tr>
+</tbody>
+</table>
+<h2>5.20 CT20: Define Investment Reason for Portfolio Item.</h2>
+<p>System should provide the functionality of providing the reason for which the concept or proposal is created. This can help to have the overview of how the capex expenditure is categorized.</p>
+<p>As per the business requirement the investment reasoning is divided into types-Basic Demand and Additional Demand. Basic demand includes all the investment that are necessary to ensure the specified operation/intended use and for measures that are necessary to comply with legal and government requirements. Whereas all investments not included in the Basic Demand must be allocated to the Additional Demand.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>**  **As requestor, I want to define the reasoning of the project requirement in investment proposal.</p>
+<p>**          <strong><em>*Acceptance criteria</em></strong><em>:</em>*</p>
+<ul>
+<li>Requestor can select and define the Project requirement reason to Portfolio Item</li>
+</ul>
+<p><strong>Design Decision</strong></p>
+<table>
+<thead>
+<tr>
+<th>Investment Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maintenance (BD)</td>
+</tr>
+<tr>
+<td>Replacement (BD)</td>
+</tr>
+<tr>
+<td>Regulatory requirements and internal rules (BD)</td>
+</tr>
+<tr>
+<td>Product quality improvement (AD)</td>
+</tr>
+<tr>
+<td>Productivity improvement (AD)</td>
+</tr>
+<tr>
+<td>Cost reduction (AD)</td>
+</tr>
+<tr>
+<td>Expansion (new/add business) (AD)</td>
+</tr>
+<tr>
+<td>Restructuring (AD)</td>
+</tr>
+</tbody>
+</table>
+<h2>5.21 CT21: Mapping WBS template to Portfolio Item template</h2>
+<p>System should provide with the functionality with the creation of standard PS project based on the selection of the Portfolio Item type. The WBS template assigned to the Portfolio Item should consist of the set of standard WBS elements which are used to fulfil the objective of Project requirement and operations.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Investment Manager, I want standard PS project to be created automatically (at least till third level of WBS) based on type of investment proposal requirement.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>PS project created automatically with defined WBS elements maintained in PS project template mapped to Portfolio Item Type.</li>
+</ul>
+<h2>5.22 CT23: Objects Hidden from PPM Item screen.</h2>
+<p>SAP PPM provides some standard fields which needs to be hidden from Portfolio Item screen as they are not in used for business operations.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Investment Manager, I need only selective defined field objects to be hidden from the portfolio Item screen view.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Defined fields should be hidden from PPM Item screen view.</li>
+</ul>
+<h2>5.23 CT24: Set up Custom Long text Fields for Admins and sites.</h2>
+<div class="highlight"><pre><span></span><code>System needs to provide with the functionality to support the role of Admins and Site with additional fields so they can use these fields to provide more details about the project.
+</code></pre></div>
+
+<p>The following User Story applies to the functionality:</p>
+<p>As Admin, I need additional fields to provide more details if required about Portfolio Item and this fields should be open to enter any additional information.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>
+<p>12 Custom Additional Fields should be setup to be used by Admins.</p>
+</li>
+<li>
+<p>6 Custom Additional Fields should be setup to be used by Sites.</p>
+</li>
+</ul>
+<h2>5.24 Portfolio Item ID needs to match Project Coding Mask-GAP</h2>
+<p>**  RICEFW <strong>**Type- Enhancement</strong></p>
+<p><strong>Business Case-</strong> To enable efficient communication and exchange between different user groups (requester, investment manager, project manager, purchasing, asset management, ...) working on investment project portfolio item ID should be equal to the PS project ID. Both objects will be used in the same business process but with SAP standard it is impossible for project system users and very difficult for PPM users to identify the linked business object in the other application. This would create a communication barrier between two functions whose communication is key for the successful execution of investment projects. If a portfolio item IDs is is assigned automatically that fits the latter coding of the PS project the linkage is obvious (both objects have the same ID)</p>
+<p>With Standard Work Around linking PS project manually to portfolio item with pasting the name number is possible but it would violate business rule that a PS project (accounting object) should only be available as soon as the investment is approved.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>To ease the usability of SAP the portfolio item ID should be equal to the PS project ID. This allows efficient communication / exchange between so the users working on investment management and the users working project execution, as there needs to be no translation of the IDs.  </p>
+<p>The portfolio item IDs should be assigned automatically by the system and fit the coding masks of the PS project templates assigned to the portfolio item. Furthermore, should the PS project created out of the portfolio item match the assigned ID of the portfolio item.  </p>
+<p>Example of a current coding mask: AXXNC-123456</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>
+<p>Portfolio ID assigned automatically.</p>
+</li>
+<li>
+<p>Portfolio ID matching coding mask of PS project templates assigned.</p>
+</li>
+<li>
+<p>PS project created out of portfolio item with same ID (PROJ-PSPID) as portfolio item</p>
+</li>
+</ul>
+<p>Requirement covered under Project ID GAP</p>
+<p><strong>5.</strong><strong>24</strong><strong>.1   Custom Messages for Validation &amp; Substitution</strong></p>
+<p>The following User story applies to the functionality.</p>
+<p>As a project controller I want to see descriptive error messages in case a validation throws an error to know what must be changed.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>
+<p>Error message indicated which data caused the validation to fail.</p>
+</li>
+<li>
+<p>User knows what to change to avoid failure of substitution.</p>
+</li>
+</ul>
+<h2>5.25 IM18: Currency conversion</h2>
+<p>System should provide with the functionality to calculate the EUR values according to the FX rates defined for the Local currencies for Financial Data.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Admin I want the CapEx tool to calculate Euro values according to applicable FX-rate automatically. Yearly and cumulated Actual/ -Committed/ -Plan values need to be available down to project level but can be aggregated up to group level. Data needs to be inserted on project level.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Data will be inputted in local value and converted by FX-rate in Euro from CoFiPot tool on project level for forecast, actuals and committed values. Aggregation should be possible on project and portfolio level (sum of project numbers).</li>
+</ul>
+<p><strong>Design decision:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">Currency</span><span class="w"> </span><span class="nx">types</span><span class="w"> </span><span class="nx">Maintained</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">PPM</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">Wave</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">testing</span><span class="w"> </span><span class="nx">purposes</span><span class="p">.</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>USD</p>
+</li>
+<li>
+<p>Swiss franc</p>
+</li>
+<li>
+<p>GBP</p>
+</li>
+<li>
+<p>US Dollar</p>
+</li>
+<li>
+<p>EURO</p>
+</li>
+<li>
+<p>Chinese RMB</p>
+</li>
+<li>
+<p>Brazil real</p>
+</li>
+</ul>
+<p>For Go-Live every currency used at Bayer has to be implemented.</p>
+<h2>5.26 IM25: Load FX-rates</h2>
+<p>System should support with the functionality to have the correct FX rates to be pulled as per the Local currency defined.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Admin I want the valid FX-Rates to be pulled from corporate tables. This is required for consistent reporting.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Interface to CoFiPot to take over correct currency exchange rate.</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<p>**  <strong>**    </strong>As standard PPM multiple exchange rate types for same line type is not possible.</p>
+<ul>
+<li>
+<p>Budget Rate- P (set as Standard for budget)</p>
+</li>
+<li>
+<p>Expected Rate-E (Gap)</p>
+</li>
+<li>
+<p>Average in Month per Month-DM (set as standard for actuals)</p>
+</li>
+</ul>
+<h2>5.27 IM30: Manual actuals insertion</h2>
+<p>System should support with the functionality to support non-SAP sites projects to allow to insert their data manually with verified Project number as they cannot record on WBS-elements because of absence of PS project.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As a User I want manual Actuals insertion to be possible for non-Sap sites. This is required since these values cannot be recorded on WBS-elements. Non-Sap sites must be identifiable by the Project Number syntax/characteristics.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Interface for integration of data for non-SAP-sites. Projects for Non-SAP sites to be verified by project number.</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<ul>
+<li>
+<p>New Portfolio Item type- Investment Project w/o SAP PS.</p>
+</li>
+<li>
+<p>No PS project creation and Actual cost can be entered manually.</p>
+</li>
+<li>
+<p>Approval process will be same as Investment Portfolio Item type.</p>
+</li>
+</ul>
+<h2>5.28 IM59: Mass upload</h2>
+<p>System should support with the functionality to upload standard hierarchy and classification hierarchy objects to system.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager I require that (only) Investment Management has mass (unlimited number of Projects / Initiatives / Items / Portfolios) upload functionalities to allow for a low effort coordinated content and portfolio management. The upload functionality must ensure a limitation to respective Divisions/Functions.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Mass upload functionality for project fields (figures, text) should be possible but restricted to only some admin people and a limitation to Division, Function and Subfunction should be possible (e.g.: setting all values for a specific field of one function to zero).</li>
+</ul>
+<h2>5.29 IM63: Placeholder projects &amp; non-SAP companies</h2>
+<p>System should provide with the functionality of setup for placeholders and non-SAP sites with possibility to manually enter financial data without the integration of PS/CPM.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager I want to be able to setup a site and placeholder projects for non-SAP companies (e.g., Pharma arm’s length platform companies) with the option to manually enter Actual, Forecast, OPC, StraCo entry values in Local currency to allow for full coverage of the Divisional CAPEX</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Project integration possibility for projects with non-SAP systems and no necessary integration with CPM/PS. Input fully accessible for Portfolio views and Reporting.</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<p>Two Portfolio Item type defined- Admin Projects (For Placeholders) and Investment Project w/o SAP PS (For Non-SAP sites projects)</p>
+<h2>5.30 Additional Fields for Project Specifications    - GAP</h2>
+<div class="highlight"><pre><span></span><code>**RICEFW Type-Enhancement**
+</code></pre></div>
+
+<p><strong>Business Case-</strong> Multiple fields used for investment project reporting today used in legacy solution (BaySim) can't be mapped to SAP standard fields / functions. The enable the same level of transparency in investment reporting additional fields need to be implemented. Standard Workaround can be to not include fields in SAP, extend system extracts with Excel / SharePoint information. But it will have the risk of (1) additional manual effort (2) reporting not standardized (3) potential errors due to manual tasks.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As Investment Manager, I need to define my portfolio items with the following additional information for systematic identification, processing and reporting purpose.</p>
+<ul>
+<li>
+<p>Real Estate Project</p>
+</li>
+<li>
+<p>Requesting Cost Center</p>
+</li>
+<li>
+<p>Responsible Cost Center</p>
+</li>
+<li>
+<p>Basic Project Flag</p>
+</li>
+<li>
+<p>IT Project (IT involved in project)</p>
+</li>
+<li>
+<p>CO2 impact in to / year</p>
+</li>
+<li>
+<p>Equipment Replacement Score</p>
+</li>
+</ul>
+<p>Also, I need the below Standard SAP fields to be rename for project identification and reporting purpose.</p>
+<ul>
+<li>
+<p>Category- Asset type 1</p>
+</li>
+<li>
+<p>Sub-category- Asset type 2</p>
+</li>
+<li>
+<p>Portfolio Item Group- Investment reason</p>
+</li>
+<li>
+<p>Technology Type- Project size</p>
+</li>
+<li>
+<p>Priority -Project Prioritization</p>
+</li>
+</ul>
+<p><strong>Acceptance Criteria</strong></p>
+<ul>
+<li>
+<p>Be able to maintain all fields mentioned above when creating a new portfolio item within one application / screen</p>
+</li>
+<li>
+<p>Have the fields above available in the reporting together will all fields from portfolio item, cpm project, PS project</p>
+</li>
+<li>
+<p>Have the information above available in the AR form</p>
+</li>
+<li>
+<p>Standard SAP PPM field renamed to required field description.</p>
+</li>
+</ul>
+<p>GAP Requirements covered under chap. 5:30 </p>
+<p><strong>5.30.1</strong><strong>    </strong><strong>PE65: Field description</strong></p>
+<p>**  **The following User Story applies to the functionality:</p>
+<p>As a FAM controller, I would like the same fields to be named the same (document number, purchase number, order number, ...)</p>
+<p><strong>Acceptance Criteria</strong><strong>:</strong></p>
+<ul>
+<li>Project reporting with correct naming of fields</li>
+</ul>
+<h2>For Capex part describe high-level scope of purchase for R2D</h2>
+<p>System should provide with the functionality to see for the CAPEX part of an investment a small explanation or slide which outlines what is planned to be purchased with this investment to get the overview of the procurement for Asset accounting team.</p>
+<div class="highlight"><pre><span></span><code>The following User Story applies to the functionality:
+</code></pre></div>
+
+<p>Asset Accounting wants to see for the CAPEX part of an investment a small explanation or slide which outlines what is planned to be purchased with this investment.</p>
+<p><strong>Acceptance Criteria</strong><strong>:</strong></p>
+<ul>
+<li>Decide if, how, where and in which format this explanation will be stored.</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<p>Scope of Purchase to be uploaded as a document in Portfolio Item. Folder template has to contain folder for scope of purchase documents</p>
+<h2>5.32 IM28: Data validity checks</h2>
+<p>System needs to support with the functionality to perform validity checks for data fields in order have the correct data handling.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Admin I want the CapEx tool to include data validity checks to support the user in handling the tool correctly. Rules for validity checks are to be defined.</p>
+<p>The plant field should be adapted to only show valid plants in a drop down list per company code. </p>
+<p>The cost center structure should be adapted to only show valid cost centers for the company. </p>
+<p><strong>Acceptance Criteria</strong><strong>:</strong></p>
+<ul>
+<li>Validity checks according to defined rules possible.</li>
+</ul>
+<h2>5.33 IM50: Adjustments Org</h2>
+<p>System needs to provide with the functionality to initiate the adjustment to organizational data only possible with special authorizations.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager I require that (only) Investment Management can initiate adjustments (rename, add, delete, shift) to the Organization Structure / Buckets (Division-Function-Subfunction-Site) at reasonable effort &amp; cost to ensure implementation of changes within the organization.</p>
+<p><strong>Acceptance Criteria</strong><strong>:</strong></p>
+<ul>
+<li>Changes on organizational level to the structure only possible with special authorizations</li>
+</ul>
+<h2>5.34 Single Value Hierarchy</h2>
+<p>System needs to support with the functionality maintain a hierarchy with one delectable value only.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>I as a Investment Project Planner want to maintain a hierarchy with one value only. It should not be possible to split the project for example in the regional view to more than one site.</p>
+<p><strong>Acceptance Criteria</strong><strong>:</strong></p>
+<ul>
+<li>
+<p>Hierarchy can be maintained.</p>
+</li>
+<li>
+<p>Only one value is selectable in the classification or standard hierarchy</p>
+</li>
+<li>
+<p>It is only possible to assign 100% for one bucket. - (GAP)</p>
+</li>
+</ul>
+<h2>5.35 Update of Decision points to Portfolio items</h2>
+<p>Decision Point provides the functionality to capture a phase through which a portfolio item passes. Based on the decision point state we can have the traceability of the phase for portfolio item </p>
+<p>The following User Story applies to the functionality:</p>
+<p>Decision point status to be updated to get a smoother integration with gate &amp; status reporting for</p>
+<ul>
+<li>
+<p>B&amp;C project</p>
+</li>
+<li>
+<p>Main project (Investment Project)</p>
+</li>
+<li>
+<p>Lumpsum project</p>
+</li>
+<li>
+<p>Admin project</p>
+</li>
+<li>
+<p>Lumpsum Budget</p>
+</li>
+<li>
+<p>Investment Project w/o SAP PS</p>
+</li>
+<li>
+<p>Expense Project</p>
+</li>
+</ul>
+<p><strong>Acceptance Criteria</strong><strong>:</strong></p>
+<ul>
+<li>Update of decision point functionality according to the requirements.</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Portfolio Item Type</th>
+<th>Decision Point</th>
+<th>Decision point Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Completed Not Applicable</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>In Approval Pre-Fund</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Pre-fund Approved</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Concept Approval (G2)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Project Execution</td>
+<td>Mechanical Completion (G4)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Commissioning /Qualification</td>
+<td>Ready for Production (G5)</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>In Approval Validation</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>Validation Approved</td>
+</tr>
+<tr>
+<td>Investment Project (Z001)</td>
+<td>Validation</td>
+<td>Ready for Market (G6)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Completed Not Applicable</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>In Approval Pre-Fund</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Pre-fund Approved</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Concept Definition (FEL 2)</td>
+<td>Concept Approved (G2)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Project Execution</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Project Execution</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Project Execution</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Project Execution</td>
+<td>Mechanical Completion(G4)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>In Approval Supplement</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>Supplement Approved</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Commissioning /Qualification</td>
+<td>Ready for Production (G5)</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Validation</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Validation</td>
+<td>In Approval Validation</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Validation</td>
+<td>Validation Approved</td>
+</tr>
+<tr>
+<td>Investment Project w/o SAP PS (Z002)</td>
+<td>Validation</td>
+<td>Ready for Market (G6)</td>
+</tr>
+<tr>
+<td>Lumpsum Budget (Z003)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Budget (Z003)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Lumpsum Budget (Z003)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Lumpsum Project (Z004)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Lumpsum Project Completed</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Business Planning (FEL 1)</td>
+<td>In Approval B &amp; C</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Approved B&amp;C</td>
+</tr>
+<tr>
+<td>B&amp;C Project (Z005)</td>
+<td>Business Planning (FEL 1)</td>
+<td>Business Rationale Approval(G1)</td>
+</tr>
+<tr>
+<td>Admin Project (Z006)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Admin Project (Z006)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Admin Project (Z006)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Admin Project (Z006)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Planning Project Completed</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>In Approval</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Capital Planning (FEL 0)</td>
+<td>Project Initiation (G0)</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Created</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Basic Design (FEL 3)</td>
+<td>In Approval Main AR</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Project Approval Main AR (G3)</td>
+</tr>
+<tr>
+<td>Expense Project (Z007)</td>
+<td>Basic Design (FEL 3)</td>
+<td>Expense Project Completed</td>
+</tr>
+</tbody>
+</table>
+<h2>5.36 IM 76 Meaningful Screen Layouts</h2>
+<p>System needs to provide with functionality to have the screen layout clear and content oriented to avoid Least possible jumps between different sub-menus for Non- Power Users.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager I want to have the screen layouts designed clear and plausible, so it is also for non-power-user easy. The navigation on the screen should involve the least possible but still meaningful jumps between different menus and masks. </p>
+<p><strong>Acceptance Criteria</strong><strong>:</strong></p>
+<ul>
+<li>
+<p>Clear and plausible screen layout</p>
+</li>
+<li>
+<p>Organization of sub-screens is meaningful / content oriented</p>
+</li>
+<li>
+<p>Least possible jumps between different sub-menus is implemented</p>
+</li>
+</ul>
+<h2>5.37 IM 67 Enterprise Risk management (ERM)</h2>
+<p>System needs to provide with functionality to interlink the project number with the risk description in ERMS.</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As a portfolio manager i want to interlink the project number with the risk description in ERMS.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Interlink project number with risk description in ERMS system</li>
+</ul>
+<h2>5.38 IM 58 Subsystem linkage</h2>
+<p>System needs to provide with functionality a clear data concept regarding the different system layers to avoid double entries</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager I require a clear data concept regarding the different system layers (initiative; item; project) which completely avoids double entries to avoid additional resource need</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Clear data concept for usage of different system layers avoiding double entry of data and avoiding additional effort for user</li>
+</ul>
+<p><strong>Design Decision:</strong></p>
+<p>PPM system enables to have unique portfolio Item created under lowest level bucket and don't have the possibilities to have double entries as each field in PPM denote own unique information for respective project.</p>
+<h2>5.39 Automatically Site/Country/Region setup</h2>
+<p>The System should automatically take Site/country/region when the site from lowest level bucket is selected</p>
+<p>The following User Story applies to the functionality:</p>
+<p>As an Investment Manager when I select the site from lowest level bucket, the data of Site, country and region should automatically populate. </p>
+<ul>
+<li>
+<p>Rename Location to Site</p>
+</li>
+<li>
+<p>Fill Site from lowest Bucket position</p>
+</li>
+<li>
+<p>Create Country/Region automatically from Site</p>
+</li>
+<li>
+<p>Put Region / Country / Site together in one section</p>
+</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>From Site selection the country and the region will be automatically chosen, the fields are inside one section in PPM and show the selected assignment, the fields are not maintainable for normal users.</li>
+</ul>
+<p>**Design Decision: **</p>
+<div class="highlight"><pre><span></span><code><span class="n">Region</span><span class="p">,</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">site</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">maintained</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">configuration</span><span class="p">.</span><span class="w"> </span><span class="n">When</span><span class="w"> </span><span class="n">PPM</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">saved</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">lowest</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">bucket</span><span class="w"> </span><span class="n">ie</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">site</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">checks</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">inputs</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">respective</span><span class="w"> </span><span class="n">fields</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">development</span><span class="p">.</span>
+</code></pre></div>
+
+<h2>5.40 Profit centre Usage</h2>
+<p>Decision was done to integrate one profit center per division. System should provide the opportunity to only select one of them.</p>
+<p>The following User Story applies to the functionality:</p>
+<p><strong>Acceptance Criteria:</strong>** **</p>
+<ul>
+<li>Selection process for profit centres restricted to only one per division.</li>
+</ul>
+<p><strong>Design decision:</strong></p>
+<div class="highlight"><pre><span></span><code>To fetch the plant value from the plants master data through development
+</code></pre></div>
+
+<h2>5.41 Delete Reporting Status and replace with ERM number</h2>
+<p>The following User Story applies to the functionality:</p>
+<p>Reporting Status field is not needed anymore (Reporting by CPM). It could be removed. Field could be used for Enterprise Risk management (ERM number, free text field) - to be checked field length</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Reporting Status field to be removed. Enterprise Risk management field to be added.</li>
+</ul>
+<p><strong>Design decision:</strong></p>
+<div class="highlight"><pre><span></span><code>To rename the reporting status field through development.
+</code></pre></div>
+
+<h2>5.42 SBE Integration (Product hierarchy)</h2>
+<p>The following User Story applies to the functionality: </p>
+<p>SBE (Product Hierarchy) should be integrated as additional selection option for Crop Science. Idea is to use classification hierarchy for this. To be checked how a classification hierarchy could be mandatory only for one or some divisions. Validation for 100% assignment should be done (not bigger and not smaller).</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>SBE Product Hierarchy to be usable by Crop Science and mandatory to use.</li>
+</ul>
+<h2>5.43 Error correction in project fields</h2>
+<p>The following User Story applies to the functionality: </p>
+<p>Some corrections in project fields have to take place according to test results:</p>
+<ul>
+<li>
+<p>Change name from requesting cost to requesting cost centre</p>
+</li>
+<li>
+<p>Check the usage of Stage and delete if possible or make it invisible</p>
+</li>
+<li>
+<p>Remove Execution Model as a option from the drop-down list from Execution Model</p>
+</li>
+<li>
+<p>Remove technology option from technology field</p>
+</li>
+<li>
+<p>Put always full amount, but without ,00 amount</p>
+</li>
+<li>
+<p>Financial Summary to be checked on launch/Development costs: take it out if possible.</p>
+</li>
+<li>
+<p>Change field name payback to "payback in year"</p>
+</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong>** **</p>
+<ul>
+<li>Implementation of mentioned error corrections</li>
+</ul>
+<h2>5.44 Define 4th level standard for Bucket structure - Site name + company code</h2>
+<h2>The lowest level bucket structure should have site name along with company code</h2>
+<p>The following User Story applies to the functionality:</p>
+<p>The lowest hierarchy structure in the standard hierarchy should be Site + Company Code (4th Level). The next level (only company code) is not needed, because there should be no site in one subfunction with two company codes.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>
+<p>Implementation of standard hierarchy structure:</p>
+</li>
+<li>
+<p>1st level division</p>
+</li>
+<li>
+<p>2nd level function</p>
+</li>
+<li>
+<p>3rd level subfunction</p>
+</li>
+<li>
+<p>4th level Site + Company Code</p>
+</li>
+</ul>
+<p><strong>Design decision:</strong></p>
+<div class="highlight"><pre><span></span><code>To rephrase all the last level bucket with sitename and company code which is a master data activity
+</code></pre></div>
+
+<h2>5.45 Project Description &amp; status needs to be added in the report (A2R)</h2>
+<p>As a Project Manager, I would like to have a detailed description to be present during reporting.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>Custom Table for project description and project status for usage with SAC reporting.</li>
+</ul>
+<p><strong>Design decision:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">To</span><span class="w"> </span><span class="nx">implement</span><span class="w"> </span><span class="nx">custom</span><span class="w"> </span><span class="nx">coloumn</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">/</span><span class="nx">RPM</span><span class="o">/</span><span class="nx">ITEM_D</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="nx">will</span><span class="w"> </span><span class="nx">populate</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">description</span><span class="w"> </span><span class="nx">field</span><span class="w"> </span><span class="nx">content</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="nx">column</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">fetched</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">SAC</span><span class="w"> </span><span class="nx">reporting</span><span class="p">.</span>
+</code></pre></div>
+
+<h2>5.46  OPEX project adjustments</h2>
+<p>As a Project Manager, I would like to have a detailed description to be present during reporting.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<ul>
+<li>
+<p>For OPEX projects tje following fields should be set to optional:</p>
+</li>
+<li>
+<p>Investment Reason</p>
+</li>
+<li>
+<p>Project Size</p>
+</li>
+<li>
+<p>Priority Field: Only following selection possible</p>
+</li>
+<li>
+<p>High</p>
+</li>
+<li>
+<p>Medium</p>
+</li>
+<li>
+<p>Low</p>
+</li>
+<li>
+<ol start="3">
+<li>Project Type should be Expense Project as only selection (preselected), Investment Profile is not needed (take out)</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Print Fact Sheet</li>
+</ol>
+</li>
+<li>
+<p>To have only Main AR template in the OPEX project</p>
+</li>
+</ul>
+<p><strong>Design decision:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">To</span><span class="w"> </span><span class="nx">implement</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">configure</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">above</span><span class="w"> </span><span class="nx">requirements</span><span class="p">.</span>
+</code></pre></div>
+
+<h2>5.47  Activate change log for all users</h2>
+<p>As an admin user i want to have full visibility on the changes and the user who has done the changes in the system. Therefore the change-log functionality has to be activated.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Change-log functionality activated for all users. Change-log could be viewed by all people.</p>
+<p><strong>Design decision:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nv">To</span><span class="w"> </span><span class="nv">maintain</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">change</span><span class="w"> </span><span class="nv">indicator</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">marked</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">users</span><span class="w"> </span><span class="nv">who</span><span class="w"> </span><span class="nv">require</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">access</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">change</span><span class="w"> </span><span class="nv">log</span><span class="w"> </span><span class="nv">through</span><span class="w"> </span><span class="nv">security</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">authorization</span>
+</code></pre></div>
+
+<h2>5.48  OPEX: Adjustment of detailed level 3 planning</h2>
+<p>Level 3 planning  (1.1 - 1.9) should be only possible on EX fields. CI fields should be not visible or empty.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Level 3 planning should be only possible on EX fields. CI fields should be not visible or empty.</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>To implement and configure the above requirements for expenses item type.</p>
+<h2>5.48  CS Product Team Structure</h2>
+<p>Crop Science assignes all projects to an own product team (SBE) structure to get an overview about the projects, budgets and costs via product team structure.</p>
+<p>The structure could be implemented as a classification hierarchy in the PPM and could be marked as relevant for Crop Science.</p>
+<p>For Pharma the project category to be renamed and adjusted accordingly.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Crop Science could mark all projects according to product team structure and can use this for reporting purposes. PH/CH Project Category name change should be also done.</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>This is a master data maintenance of creating a new classification hierarchy called Crop science and the existing classification hierarchy to PH/CH.</p>
+<h2>5.49  PPM structure &amp; field updates</h2>
+<p>Following updates on the structure &amp; field level to be done (outcome of ET Wave 7):</p>
+<ul>
+<li>
+<p>Correct the structure of the bucket in D and Q - system with the current master data file for production (including the Test companies ZZ20 - ZZ22 in an own subfunction Test)</p>
+</li>
+<li>
+<p>Priority field  (PPM general information tab) needs to be clearly shown without shortening it on the wrong side.</p>
+</li>
+</ul>
+<p>Priorities to be shorten to 30 chars, that they are still understandable:</p>
+<ul>
+<li>
+<p>BC calc. (CF&gt;35%orPB&lt;2y) Prio1</p>
+</li>
+<li>
+<p>BC calc. (CF&gt;25%orPB&lt;4y) Prio2</p>
+</li>
+<li>
+<p>BC calc. (CF&lt;25%orPB&gt;4y) Prio3</p>
+</li>
+<li>
+<p>Strategic initative Prio1</p>
+</li>
+<li>
+<p>Strategic initative Prio2</p>
+</li>
+<li>
+<p>Strategic initative Prio3</p>
+</li>
+<li>
+<p>Safety / HSE Prio1</p>
+</li>
+<li>
+<p>Compliance / GMP Prio1</p>
+</li>
+<li>
+<p>Repl. bus. crit. Prio1</p>
+</li>
+<li>
+<p>Repl. bus. crit. Prio2</p>
+</li>
+<li>
+<p>Repl. non bus. crit. Prio3</p>
+</li>
+<li>
+<p>Description field to be set to mandatory</p>
+</li>
+<li>
+<p>Requesting/Responsible cost center field set to otional for Admin &amp; Inv. Projects without PS.</p>
+</li>
+<li>
+<p>Not assigned field in the drop down list in Technology field to be removed</p>
+</li>
+<li>
+<p>Asset Type 1 field - Intangible should be one word instead of In-Tangible</p>
+</li>
+<li>
+<p>Tangible assets</p>
+</li>
+<li>
+<p>Intangible assets</p>
+</li>
+<li>
+<p>Asset Type 2 field will be Lease (Non-Cash); Standard (Cash)</p>
+</li>
+<li>
+<p>Standard (Cash)</p>
+</li>
+<li>
+<p>Lease (Non-Cash)</p>
+</li>
+<li>
+<p>Content of Location and Region to be interchanged.</p>
+</li>
+<li>
+<p>Region is EMEA, APAC etc ... (will be automatically assigned by company code</p>
+</li>
+<li>
+<p>Location is Site Informations (MTT)</p>
+</li>
+<li>
+<p>Location to be renamed to Site</p>
+</li>
+<li>
+<p>Nomenclature of the fields for Location to be abbreviated, always with 3 digits</p>
+</li>
+<li>
+<p>MTT (instead of Mutt).</p>
+</li>
+<li>
+<p>Pay back in year to be renamed to Pay back in years. If possible in standard adjust the full number to a number with a possibility of include half or quarter of years (3,25 or 3,5 years).</p>
+</li>
+<li>
+<p>Document templates to be deleted (not needed anymore).</p>
+</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>The above mentioned changes are required to be corrected as part of the results from the exploratory testing wave 7</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>To implement and configure the above requirements.</p>
+<h2>5.50  IM51: Adjustments shifts</h2>
+<p>As an Investment Manager I require that (only) Investment Management  that  can initiate shifts of Projects / Initiatives / Items / Portfolios to other Organizational Structure / Bucket with reasonable effort &amp; cost to ensure implementation of changes and corrections </p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Changes on organizational level to the structure only possible with special authorizations</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>The global settings of movement of portfolio item from one bucket to another bucket has to be implemented. This will allow users with special authorization to move the item until the status “In Execution” </p>
+<h2>5.51  Interface between EMDH and HR system (GHP) to import information on resources for approval workflow and resource assignment</h2>
+<p>For the approval workflow in PPM the user-id are needed from the users to be used in the approval workflow and for the project assignment.</p>
+<p>Therefore the interface has to deliver the name and user-id of all affected people.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>All needed information for the HR users are available and will be updated via the GHP interface regularly.</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>The settings for transfer of HR users from HR system to SAP has to be defined.</p>
+<h2>5.52  Implementation of functional currency concept</h2>
+<p>Functional currency at Bayer serves as the currency in which the company is reporting to Bayer Group Statement. This functional currency should be also used as the local currency in which projects are planned in PPM and planned/booked in PS. The implementation has to taken into account that UPA is implemented and works with parallel accounting</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>All legal entity will plan in the functional currency. The functional currency is automatically assigned by selecting  the company. The functional currency is also be used in the module PS if planning data will be delivered from PPM to PS. Actuals will be reported also in functional currency and uploaded to PPM via interface.</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>TBD.</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>TBD.</p>
+<h2>5.53  For Capex part describe high-level scope of purchase for R2D</h2>
+<p>Asset Accounting  wants to see for the CAPEX part of an investment a small explanation or slide which outlines what is planned to be purchased with this investment</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Decide if, how, where and in which format this explanation will be stored </p>
+<h2>5.54  Access for Externals to SAP/CPM</h2>
+<p>As a project manager I want to grant externals access to Commercial Project Management (CPM) to support on the project execution without manual data down- and uploads.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>All  Defined how and to which extent externals can access Bayers SAP for project execution in the future</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>TBD.</p>
+<h2>5.55  Rename ARF to Asset Retirement Obligation &amp; small adjustments</h2>
+<p>Rename Asset Retirement Form to Asset Retirement Obligation in PPM and Factsheet.</p>
+<p>Delete AR-Approval of Overall Project field </p>
+<p>Sub function is not replicated in AR form, only function is displayed</p>
+<p>Rename Expense to Opex project in Asset Type 1 field</p>
+<p>Rename Project Manager in SAP Workflow to Project Manager/AR Initiator</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Asset Retirement Form field changed to Asset Retirement Obligation in PPM selection and in Factsheet.</p>
+<p>AR-Approval of overall project field </p>
+<p>Functions &amp; Subfunction to be displayed in AR Form (Field: Function &amp; Subfunction)</p>
+<p>Expense to Opex project in Asset Type 1 field renamed for better understanding</p>
+<p>Rename Project Manager in SAP Workflow to Project Manager/AR Initiator</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>To be updated by development.</p>
+<h2>5.56  Lease projects only possible for projects without PS integration</h2>
+<p>Lease projects should be only possible for projects without PS integration and manual maintainance of Actuals, that means only for</p>
+<ul>
+<li>
+<p>Admin projects</p>
+</li>
+<li>
+<p>Investment projects w/o PS</p>
+</li>
+</ul>
+<p>For all other projects lease option should be taken out for asset type 2 by tangible projects.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Lease projects are only selectable in asset type 2 for </p>
+<ul>
+<li>
+<p>Admin projects</p>
+</li>
+<li>
+<p>Investment projects w/o PS</p>
+</li>
+</ul>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>To be updated by development.</p>
+<h2>5.57 Special Authorization for Admin &amp; Site fields</h2>
+<p>Lease projects should be only possible for projects without PS integration and manual maintainance of Actuals, that means only for</p>
+<ul>
+<li>
+<p>Admin projects</p>
+</li>
+<li>
+<p>Investment projects w/o PS</p>
+</li>
+</ul>
+<p>For all other projects lease option should be taken out for asset type 2 by tangible projects.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Lease projects are only selectable in asset type 2 for </p>
+<ul>
+<li>
+<p>Admin projects</p>
+</li>
+<li>
+<p>Investment projects w/o PS</p>
+</li>
+</ul>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>To be updated by development.</p>
+<h2>5.58 Launchpad for Portfolio &amp; Project Management</h2>
+<p>As a business user i would like to access all functionalities for PPM from a central launchpad point. This should be done for Portfolio Management, Project Management &amp; Project Reporting. </p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>PPM Launchpad installed with direct access via Fiori apps to the different PPM functionalities.</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>To be updated by development.</p>
+<h2>5.59  PPM Field adjustments</h2>
+<p>The following adjustments (Corrections) on PPM fields have to be done:</p>
+<ul>
+<li>
+<p>System should throw a hard error when planned finish of a phase &gt; planned finish phase + 1 (today is only a warning and approval workflow does not work correctly).</p>
+</li>
+<li>
+<p>In miscellaneous tab this roles should be valid: Applicant, Project manager, Venture Manager, Others. All other roles to be deleted.</p>
+</li>
+<li>
+<p>In documents and Notes tab - Remove documents folder and just keep the Notes folder - Rename documents and notes tab to "Notes Tab" if possible</p>
+</li>
+<li>
+<p>Rename Asset Type 2: Standard (Cash) --&gt; Cash (Standard), Lease (Non Cash) --&gt; Non-Cash (Lease)</p>
+</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Adjustments/Correction successfully implemented.</p>
+<h2>5.60 Authorization design update</h2>
+<ul>
+<li>
+<p>As a Copy functionality in PPM should be only be used by Investment Manager Admin Role</p>
+</li>
+<li>
+<p>In Approval status changed to Approved could only be done by admins, normal user could not change the status and should use the approval workflow.</p>
+</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Copy functionality in PPM only usable by Investment Manager Admin role</p>
+<h2>5.61 Project Size to be removed by Lumpsum Projects</h2>
+<p>Lumpsum Projects does not need an own category about Project Size, because they are running under lumpsum, so user need not to classify the project size. For Lumpsum Budget type the classification should be done.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Project size field not shown for Lumpsum Projects type.</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>To be updated by configuration.</p>
+<h2>5.62 System should be able to accommodate migration</h2>
+<p>The system should be able to accomodate A00* Portfolio Items as part of migration --&gt; Adjustment to US: 119302</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>A Project starting with A00* can be created using the data migration program</p>
+<h2>5.63 Front Page of portfolio items</h2>
+<p>The front page of portfolio items should be adjusted to deliver a comprehensive overview about the portfolio. The future starting view should contain the following selection:</p>
+<p>Name, ID, Bucket Name, Type, Planned Start, Planned Finish, Status, Approved Costs (Planned Costs), Actual Costs, Category. </p>
+<p>All other possible fields could be activated, but hided (selectable by Advanced Filter)</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Front Page is designed as described.</p>
+<p><strong>Design decision</strong><strong>:</strong></p>
+<p>To be updated by configuration.</p>
+<h2>5.64 Rename Expense to Opex project in Asset Type 1 field</h2>
+<p>Rename Expense to Opex project in Asset Type 1 field</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>In Asset Type 1 Expense project could be selected</p>
+<h2>5.65 Portfolio Item overview header adjustment</h2>
+<p>Remove the additional content in the portfolio item header screen.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Removal of budget status, Schedule status and staffing status from the portfolio item overview header.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>5.66 For Capex part describe high-level scope of purchase for R2D</h2>
+<p>Asset Accounting  wants to see for the CAPEX part of an investment a small explanation or slide which outlines what is planned to be purchased with this investment</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Decide if, how, where and in which format this explanation will be stored </p>
+<h2>5.67 Allowed cost center adapted only to valid ones</h2>
+<p>For the responsible and requesting cost center it should be only possible to select valid cost centers (from cost center table in the EMDH) for the legal entity. This is even important for the functionality of opening projects in PS/CPM, otherwise the functionality will dump.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Responsible &amp; Requesting cost center could be only selected from the cost center table in the EMDH for valid cost centers for the selected legal entity.</p>
+<h2>5.68 Admin and Site fields usable by SAC Reporting and portfolio prioritization</h2>
+<p>The Investment manager and investment need for portfolio structuring and decision 12 Admin and 6 site fields to input the data and use these fields for reporting purposes. The fields should be visible in SAC Reporting and could be used there for clarity and decision making.</p>
+<p>The current fields from standard customizing are not able to be used in the reporting, therefore two Tabs have to be set up in the Portfolio management with new fields which are able to be used in CDS views.</p>
+<p>Tab1: Admin fields (with 12 fields, fields length 50 characters)</p>
+<p>Tab2: Site fields (with 6 fields, field length 50 characters)</p>
+<p>.</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Two new tabs in PPM implemented with </p>
+<p>Tab1: Admin fields (with 12 fields, fields length 50 characters)</p>
+<p>Tab2: Site fields (with 6 fields, field length 50 characters)</p>
+<p>Fields could be used in Portfolio Reporting.</p>
+<h2>5.69 Adjustment of Technology Type in PPM</h2>
+<p>The technical name of Technology Type has to be adjusted to implement automatic assignment to Scale in PS projects.</p>
+<p>Lumpsum-Projects -&gt; Type 0000 or if not possible 0007 (check also on PS) (new)</p>
+<p>Projects / Technology - Type 0001 </p>
+<p>Projects / Technology - Type 0002 </p>
+<p>Projects / Technology - Type 0003 </p>
+<p>Projects / Technology - Type 0004 </p>
+<p>Projects / Technology - Type 0005</p>
+<p>Projects / Technology - Type 0006</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Technical name of Technology Type adjusted according to the description.</p>
+<h2>5.70 Implementation of sites in the Site field for Basel and Iberia</h2>
+<p>For Basel and Iberia the names in the Site field has to be enlarged with the following countries:</p>
+<p>Basel</p>
+<p>Carnaxide</p>
+<p>La Felguera</p>
+<p>Saint Joan Despi</p>
+<p>Murcia</p>
+<p>El Ejido</p>
+<p>Nijar</p>
+<p>Cheste</p>
+<p>Paterna</p>
+<p>Brenes</p>
+<p>Lisbon</p>
+<p>Cacem</p>
+<p>Alcala</p>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Site field adjusted with site names for Basel and Iberia</p>
+<h2>5.71 Global BCS adjustments August 2025 - Change of Priority and new field</h2>
+<p>BCS division has decided to implement two changes into the global investment management tool. The changes will be implemented in BaySim in August 2025 and have to be implemented in August in PPM accordingly. Additionally the migration programs have to be checked to include the changes.</p>
+<ul>
+<li>Renaming of field Proirity to Project Purpose. Change content:</li>
+</ul>
+<p><img alt="Figure 6" src="images/image0006.png" /></p>
+<!-- OCR START: image0006.png -->
+<p>! -</p>
+<p>Safety / HSE Priot [safety<br />
+Compliance / GMP Priot Compliance</p>
+<p>Repl. bus. crit.high sales Priol</p>
+<p>Repl. bus. crit. Prio2 Replacement</p>
+<p>[Repl. non bus. crit. Prio3</p>
+<p>DBus. Case cal. (CFROI&gt;35%orPB&lt;=2y) Priol Growth Tier 1 (CFROI&gt;35%o0rPB&lt;=2y)<br />
+Bus. Case cal. (CFROI&gt;25%orPB&lt;=4y) Prio2 Growth Tier 2 (CFROI&gt;25%orPB&lt;=4y)<br />
+Bus. Case cal. (CFROT&lt;=25%orPB&gt;4y) Prio3 Growth Tier 3 (CFROI&lt;=25%0rPB&gt;dy)<br />
+igh priority strategic iniiative Priot</p>
+<p>Medium priority strategic intiative Prio2 Enable</p>
+<p>Low priority strategic initiative Prio3</p>
+<p>na [Sustainabili<br />
+o ity 5</p>
+<!-- OCR END: image0006.png -->
+
+<ol start="2">
+<li>Implement new classification hierachy (master data change -&gt; no customizing or transport needed).</li>
+</ol>
+<p>CS Franchise” into BaySIM, with the following values:5</p>
+<ul>
+<li>
+<p>CP Core</p>
+</li>
+<li>
+<p>CP Glyphosate</p>
+</li>
+<li>
+<p>Seeds &amp; Traits</p>
+</li>
+<li>
+<p>Enterprise</p>
+</li>
+</ul>
+<p><strong>Acceptance Criteria:</strong></p>
+<p>Field and content change for Priority field (to Project Purpose) done. New classification hierachy active.</p>
+<h2>5.72 Implementation of site/Country/Region for US Crop Science</h2>
+<p>Implementation of site/Country/Region for US Crop Science.</p>
+<p>Country: US, Region: North America</p>
+<p>Sites:</p>
+<table>
+<thead>
+<tr>
+<th>Site</th>
+<th>Abbr.</th>
+<th>Country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chesterfield</td>
+<td>CEF</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Creve Coeur</td>
+<td>CRE</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Gothenburg</td>
+<td>GOT</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Grinnell</td>
+<td>GLL</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Kansas City</td>
+<td>KCM</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Lubbock</td>
+<td>LBK</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Scott</td>
+<td>SOT</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Waterman</td>
+<td>WAM</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Tucson</td>
+<td>TUC</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Kihei</td>
+<td>KIE</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Kunia Camp</td>
+<td>KUI</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Decatur</td>
+<td>DCA</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Haleiwa</td>
+<td>HIW</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Kaunakakai</td>
+<td>KAU</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Memphis</td>
+<td>MEM</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Storm Lake</td>
+<td>SMK</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Williamsburg</td>
+<td>WIB</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Boone</td>
+<td>BOO</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Clarion</td>
+<td>CLR</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Centralia</td>
+<td>CET</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Constantine</td>
+<td>CNI</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Farmer City</td>
+<td>FAM</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Illiopol</td>
+<td>ILL</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Kearney</td>
+<td>KEA</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Marshall</td>
+<td>MRA</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Matthews</td>
+<td>MTW</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Othello</td>
+<td>OTH</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Redwood Falls</td>
+<td>REW</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Remington</td>
+<td>RMG</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Stonington</td>
+<td>SOG</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Waco</td>
+<td>WAC</td>
+<td>US</td>
+</tr>
+<tr>
+<td>West Fargo</td>
+<td>WSF</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Windfall</td>
+<td>WIF</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Eloy</td>
+<td>ELO</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Hollandale</td>
+<td>HOA</td>
+<td>US</td>
+</tr>
+<tr>
+<td>Lockney</td>
+<td>LOK</td>
+<td>US</td>
+</tr>
+</tbody>
+</table>
+<h2>5.73 Implement Profit Center Radiology</h2>
+<p><strong>Descrip</strong>**tion: **</p>
+<p>Implement the Profit Center for Radiology Others into the system (In the Profit Center field in PPM).</p>
+<table>
+<thead>
+<tr>
+<th>RB00001152</th>
+<th>Other Radiology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Acceptance Criteria:</strong></p>
+<table>
+<thead>
+<tr>
+<th>RB00001152</th>
+<th>Other Radiology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>is selectable in the Profit Center field in PPM. </p>
+<h1>Controls</h1>
+<table>
+<thead>
+<tr>
+<th>Sr. Nr.</th>
+<th>Ref ID</th>
+<th>URS ID</th>
+<th>Type</th>
+<th>Control</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h1>Security &amp; Access</h1>
+<p>N/A</p>
+<h1>Assumptions and Design Constraints</h1>
+<p>NA</p>
+<h1>Key Design Decisions Associated with Process</h1>
+<p>N/A</p>
+<h1>Governing Documents</h1>
+<p>The following SOPs are applicable:</p>
+<table>
+<thead>
+<tr>
+<th>Document No.</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CD 11</td>
+<td>Management of Capex Projects</td>
+</tr>
+<tr>
+<td>GS_HC_147</td>
+<td>Project Management for Site CapEx Project</td>
+</tr>
+</tbody>
+</table>
+<h1>Referenced Documents</h1>
+<table>
+<thead>
+<tr>
+<th>Document No.</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CD 11</td>
+<td>Management of Capex Projects</td>
+</tr>
+<tr>
+<td>CD 2035</td>
+<td>Planning and Approval of Capex</td>
+</tr>
+<tr>
+<td>GS_HC_147</td>
+<td>Project Management for Site CapEx Project</td>
+</tr>
+</tbody>
+</table>
+        </main>
+    </div>
+
+<!-- css_mode=inline generate_toc=false remove_images=false md_links=convert_to_html normal_links=leave internal_links=_self external_links=_blank override_file_meta_settings=true
+style_css_name=light_big_font_normal_contrast_3
+file_meta_settings_detected=false comment="made with love <3  ---  I<3U M :*" -->
+</body>
+</html>
