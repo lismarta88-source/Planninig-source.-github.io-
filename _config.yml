@@ -2,6 +2,21 @@ title: My Awesome Website
 description: A site built with Jekyll on GitHub Pages
 theme: jekyll-theme-cayman
 
+# _config.yml
+plugins:
+  - jekyll-feed          # Auto-generate RSS feed
+  - jekyll-sitemap       # Auto-generate sitemap
+  - jekyll-seo-tag       # Better SEO
+  - jekyll-archives      # Organize content by date/category
+  
+collections:
+  tools:
+    output: true
+    permalink: /tools/:name/
+  documents:
+    output: true
+    permalink: /docs/:name/
+
 # Optional settings
 author: lismarta88-source
 email: your-email@example.com
